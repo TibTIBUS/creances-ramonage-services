@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="images/logo-creances-ramonage.png">
+<title>Créances Ramonage Services</title>
+<meta name="description" content="Ramonage, entretien et installation de poêles bois et granulés, démoussage et petits travaux à Créances et dans le centre Manche. Devis gratuit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: chantier-sheet — dark hearth hero with rising embers, light paper body, charcoal bands for proof, orange only for action */
+:root{
+  --charbon:#2A2D35;      /* logo charcoal */
+  --charbon-2:#1E2026;
+  --braise:#E36A12;       /* logo orange */
+  --braise-vif:#F07D22;
+  --braise-sombre:#B9520A;
+  --papier:#FAF7F3;
+  --surface:#FFFFFF;
+  --encre:#23262D;
+  --gris:#5E6470;
+  --trait:#E4DFD8;
+  --suie:#EFEAE3;
+  --sur-sombre:#F4F1EC;
+  --sur-sombre-2:#B9BCC4;
+  --ombre:0 18px 40px -22px rgba(30,32,38,.45);
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --r:6px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papier:#17191E;--surface:#212329;--encre:#ECE8E2;--gris:#A9ADB6;--trait:#33363E;--suie:#1C1E23;
+  --charbon:#22252C;--charbon-2:#121317;--braise:#F07D22;--braise-vif:#FF8E35;--braise-sombre:#E36A12;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --papier:#17191E;--surface:#212329;--encre:#ECE8E2;--gris:#A9ADB6;--trait:#33363E;--suie:#1C1E23;
+  --charbon:#22252C;--charbon-2:#121317;--braise:#F07D22;--braise-vif:#FF8E35;--braise-sombre:#E36A12;color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--papier);color:var(--encre);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:.005em}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
+:focus-visible{outline:3px solid var(--braise);outline-offset:3px;border-radius:3px}
+
+/* demo ribbon */
+.demo{background:var(--charbon-2);color:var(--sur-sombre-2);font-size:13px;text-align:center;padding:7px 16px}
+.demo b{color:var(--braise-vif);font-weight:600}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--papier) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s, box-shadow .3s}
+.top.scrolled{border-color:var(--trait);box-shadow:0 8px 24px -18px rgba(0,0,0,.35)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:76px;transition:height .3s}
+.top.scrolled .wrap{height:62px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand img{width:54px;height:54px;border-radius:8px;background:#fff;transition:width .3s,height .3s;flex:none}
+.top.scrolled .brand img{width:44px;height:44px}
+.brand span{font:700 20px/1 var(--display);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.brand span em{font-style:normal;color:var(--braise)}
+.nav{margin-left:auto;display:flex;gap:26px;align-items:center}
+.nav a{text-decoration:none;font-weight:600;font-size:15px;color:var(--gris);position:relative;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--braise);transition:right .25s}
+.nav a:hover{color:var(--encre)}
+.nav a:hover::after{right:0}
+.nav a.btn{color:#fff;padding:12px 18px}
+.nav a.btn::after{display:none}
+.nav a.btn:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;border:0;cursor:pointer;text-decoration:none;font:700 15px/1 var(--body);letter-spacing:.02em;padding:15px 22px;border-radius:var(--r);transition:transform .2s, background .2s, box-shadow .2s}
+.btn-feu{background:var(--braise);color:#fff;box-shadow:0 10px 22px -12px var(--braise)}
+.btn-feu:hover{background:var(--braise-sombre);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px #fff;transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;flex:none}
+.top .btn{padding:12px 18px}
+@media (max-width:900px){.nav a:not(.btn){display:none}.brand span{font-size:17px}}
+@media (max-width:520px){.brand span{display:none}.top .btn{padding:11px 14px;font-size:14px}}
+
+/* hero */
+.hero{position:relative;background:var(--charbon-2);color:#fff;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:-6% 0 0 0;background:center 60%/cover no-repeat;z-index:-3;transform:scale(1.06);animation:breathe 14s ease-in-out infinite alternate}
+@keyframes breathe{to{transform:scale(1.12) translateY(-1.5%)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(18,19,23,.94) 0%,rgba(18,19,23,.82) 42%,rgba(18,19,23,.35) 100%),linear-gradient(0deg,rgba(18,19,23,.85),transparent 40%)}
+#embers{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
+.hero .wrap{padding-block:88px 72px;display:grid;gap:34px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 14px/1 var(--display);text-transform:uppercase;letter-spacing:.18em;color:var(--braise-vif)}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+.hero h1{font-size:clamp(44px,7.4vw,92px);font-weight:800;text-transform:uppercase;max-width:13ch;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 em{font-style:normal;color:var(--braise-vif)}
+.hero .lead{font-size:clamp(17px,1.6vw,20px);max-width:56ch;color:#D9DCE1;animation:rise .9s .12s cubic-bezier(.2,.7,.2,1) both}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;animation:rise .9s .22s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{transform:translateY(18px);opacity:.01}to{transform:none;opacity:1}}
+.badges{display:flex;flex-wrap:wrap;gap:10px 22px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);font-size:14.5px;color:#D9DCE1}
+.badges li{display:flex;gap:9px;align-items:center;list-style:none}
+.badges svg{width:18px;height:18px;color:var(--braise-vif);flex:none}
+.badges ul{display:contents}
+
+/* saison */
+.saison{background:var(--charbon);color:var(--sur-sombre)}
+.saison .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:28px 48px;align-items:center;padding-block:30px}
+.saison h2{font-size:clamp(24px,2.6vw,32px);text-transform:uppercase}
+.saison h2 span{color:var(--braise-vif)}
+.saison p{color:var(--sur-sombre-2);font-size:15px;margin-top:6px}
+.mois{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px}
+.m{display:grid;gap:6px;text-align:center;font:600 12px/1 var(--body);color:var(--sur-sombre-2);text-transform:uppercase;letter-spacing:.04em}
+.m i{display:block;height:34px;border-radius:3px;background:rgba(255,255,255,.08);position:relative}
+.m.chauffe i{background:linear-gradient(180deg,var(--braise-vif),var(--braise-sombre))}
+.m.ideal i{background:repeating-linear-gradient(135deg,rgba(240,125,34,.55) 0 6px,rgba(240,125,34,.2) 6px 12px)}
+.m.now i{outline:2px solid #fff;outline-offset:2px}
+.m.now b{color:#fff}
+.m b{font-weight:600}
+.legende{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:13px;color:var(--sur-sombre-2)}
+.legende span{display:inline-flex;align-items:center;gap:7px}
+.legende i{width:14px;height:10px;border-radius:2px;display:inline-block}
+@media (max-width:820px){.saison .wrap{grid-template-columns:1fr}}
+@media (max-width:460px){.m{font-size:10px}.m i{height:26px}}
+
+/* sections */
+section.bloc{padding-block:clamp(64px,9vw,112px)}
+.titre{display:grid;gap:14px;margin-bottom:44px;max-width:760px}
+.titre .eyebrow{color:var(--braise)}
+.titre h2{font-size:clamp(34px,4.6vw,56px);text-transform:uppercase;font-weight:800}
+.titre p{color:var(--gris);font-size:18px;max-width:62ch}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.svc{position:relative;background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);min-height:280px;transition:transform .3s, box-shadow .3s}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--ombre)}
+.svc figure{margin:0;overflow:hidden;position:relative}
+.svc figure img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.svc:hover figure img{transform:scale(1.07)}
+.svc .txt{padding:26px 26px 24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.svc .tag{font:700 12px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--braise)}
+.svc h3{font-size:30px;text-transform:uppercase;font-weight:700}
+.svc p{color:var(--gris);font-size:15.5px}
+.svc ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:5px;font-size:15px}
+.svc li{display:flex;gap:9px;align-items:flex-start}
+.svc li::before{content:"";flex:none;width:7px;height:7px;margin-top:9px;background:var(--braise);transform:rotate(45deg)}
+.svc .lien{margin-top:auto;padding-top:10px;font-weight:700;font-size:15px;color:var(--braise);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.svc .lien span{transition:transform .2s}
+.svc .lien:hover span{transform:translateX(4px)}
+@media (max-width:980px){.services{grid-template-columns:1fr}}
+@media (max-width:560px){.svc{grid-template-columns:1fr}.svc figure{aspect-ratio:16/9}}
+
+/* pourquoi */
+.pourquoi{background:var(--suie)}
+.pq-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.pq-photo{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--ombre);aspect-ratio:4/5;max-width:100%}
+.pq-photo img{width:100%;height:100%;object-fit:cover}
+.pq-photo .stamp{position:absolute;left:18px;bottom:18px;right:18px;background:rgba(18,19,23,.86);color:#fff;padding:18px 20px;border-left:4px solid var(--braise);border-radius:4px;backdrop-filter:blur(4px)}
+.stamp q{display:block;font:700 23px/1.15 var(--display);text-transform:uppercase;quotes:"« " " »"}
+.stamp small{display:block;margin-top:8px;color:var(--sur-sombre-2);font-size:13px}
+.raisons{display:grid;gap:26px}
+.raison{display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px}
+.raison .ico{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--charbon);color:var(--braise-vif)}
+.raison .ico svg{width:24px;height:24px}
+.raison h3{font-size:25px;text-transform:uppercase;margin-bottom:5px}
+.raison p{color:var(--gris);font-size:16px}
+.regle{margin-top:6px;padding:18px 20px;border:1px dashed var(--braise);border-radius:var(--r);font-size:15.5px;background:var(--surface)}
+.regle b{color:var(--braise)}
+@media (max-width:900px){.pq-grid{grid-template-columns:1fr}.pq-photo{aspect-ratio:16/11}}
+
+/* déroulé */
+.etapes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:e;position:relative}
+.etape{padding:0 22px 0 0;position:relative}
+.etape::before{counter-increment:e;content:counter(e,decimal-leading-zero);display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--surface);border:2px solid var(--braise);color:var(--braise);font:800 22px/1 var(--display);position:relative;z-index:1;margin-bottom:18px}
+.etape::after{content:"";position:absolute;top:29px;left:58px;right:0;height:2px;background:repeating-linear-gradient(90deg,var(--braise) 0 8px,transparent 8px 14px);opacity:.55}
+.etape:last-child::after{display:none}
+.etape h3{font-size:24px;text-transform:uppercase;margin-bottom:6px}
+.etape p{color:var(--gris);font-size:15.5px}
+@media (max-width:900px){.etapes{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 0}.etape:nth-child(2)::after{display:none}}
+@media (max-width:520px){.etapes{grid-template-columns:1fr}.etape::after{display:none}}
+
+/* zone + presse band */
+.bande{background:var(--charbon);color:var(--sur-sombre)}
+.bande .titre h2{color:#fff}
+.bande .titre p{color:var(--sur-sombre-2)}
+.bande .titre .eyebrow{color:var(--braise-vif)}
+.zone-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:start}
+.carte{position:relative;background:var(--charbon-2);border-radius:var(--r);padding:12px;border:1px solid rgba(255,255,255,.08)}
+.carte svg{width:100%;height:auto;display:block}
+.communes{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.communes span{padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.07);font-size:14px;color:var(--sur-sombre)}
+.communes span.home{background:var(--braise);color:#fff;font-weight:600}
+.presse{background:var(--surface);color:var(--encre);border-radius:var(--r);padding:28px;display:grid;gap:14px;box-shadow:var(--ombre)}
+.presse .src{font:700 13px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--braise)}
+.presse h3{font-size:28px;text-transform:uppercase;font-weight:700}
+.presse blockquote{margin:0;padding-left:16px;border-left:3px solid var(--braise);color:var(--gris);font-style:italic}
+.presse a.btn{justify-self:start}
+.cma{display:flex;gap:14px;align-items:center;margin-top:18px;padding:18px;border-radius:var(--r);border:1px solid rgba(255,255,255,.12);font-size:15px;color:var(--sur-sombre-2)}
+.cma svg{width:34px;height:34px;color:var(--braise-vif);flex:none}
+.cma b{color:#fff}
+@media (max-width:900px){.zone-grid{grid-template-columns:1fr}}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start}
+.faq details{border-bottom:1px solid var(--trait)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;font:700 22px/1.2 var(--display);text-transform:uppercase}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;margin-top:-10px;border-right:2.5px solid var(--braise);border-bottom:2.5px solid var(--braise);transform:rotate(45deg);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(-135deg);margin-top:-3px}
+.faq details p{padding:0 0 22px;color:var(--gris);max-width:62ch}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr}}
+
+/* devis */
+.devis{background:linear-gradient(180deg,var(--papier),var(--suie))}
+.devis-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:32px;align-items:start}
+form.carte-devis{background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);padding:clamp(22px,3vw,36px);box-shadow:var(--ombre);display:grid;gap:22px}
+.champs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
+.champ{display:grid;gap:7px;min-width:0}
+.champ.full{grid-column:1/-1}
+label,.legend{font-weight:600;font-size:14.5px}
+label small,.legend small{color:var(--gris);font-weight:400}
+input[type=text],input[type=tel],input[type=email],select,textarea{width:100%;font:500 16px/1.4 var(--body);color:var(--encre);background:var(--papier);border:1.5px solid var(--trait);border-radius:var(--r);padding:13px 14px;transition:border-color .2s, box-shadow .2s, background .2s}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--braise);box-shadow:0 0 0 4px color-mix(in srgb,var(--braise) 18%,transparent);background:var(--surface)}
+.invalid{border-color:#C8371D!important}
+.err{color:#C8371D;font-size:13.5px;min-height:0}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:10px}
+.puces{display:flex;flex-wrap:wrap;gap:10px}
+.puce input{position:absolute;opacity:0;pointer-events:none}
+.puce span{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1.5px solid var(--trait);background:var(--papier);font-weight:500;font-size:15px;cursor:pointer;transition:all .2s;user-select:none}
+.puce span::before{content:"";width:14px;height:14px;border-radius:3px;border:1.5px solid var(--gris);transition:all .2s}
+.puce input:checked + span{border-color:var(--braise);background:color-mix(in srgb,var(--braise) 12%,var(--surface));color:var(--encre)}
+.puce input:checked + span::before{background:var(--braise);border-color:var(--braise);box-shadow:inset 0 0 0 2px var(--surface)}
+.puce input:focus-visible + span{outline:3px solid var(--braise);outline-offset:2px}
+.radios .puce span::before{border-radius:50%}
+.form-pied{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;justify-content:space-between}
+.form-pied p{font-size:13.5px;color:var(--gris);max-width:44ch}
+.recap{border:2px solid var(--braise);border-radius:var(--r);padding:22px;background:color-mix(in srgb,var(--braise) 7%,var(--surface));display:grid;gap:10px}
+.recap h3{font-size:26px;text-transform:uppercase}
+.recap dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 16px;margin:4px 0 0;font-size:15px}
+.recap dt{color:var(--gris)}
+.recap dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.recap .note{font-size:13.5px;color:var(--gris)}
+.aside{display:grid;gap:18px}
+.contact{background:var(--charbon);color:var(--sur-sombre);border-radius:var(--r);padding:26px;display:grid;gap:16px}
+.contact img{width:96px;height:96px;border-radius:8px;background:#fff}
+.contact h3{font-size:26px;text-transform:uppercase;color:#fff}
+.contact .ligne{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.contact .ligne svg{width:20px;height:20px;color:var(--braise-vif);flex:none;margin-top:3px}
+.contact .ligne small{display:block;color:var(--sur-sombre-2);font-size:13px}
+.a-completer{border-bottom:1.5px dashed var(--braise-vif);font-weight:600}
+.garanties{background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);padding:22px;display:grid;gap:12px;font-size:15px}
+.garanties div{display:flex;gap:10px}
+.garanties svg{width:20px;height:20px;color:var(--braise);flex:none;margin-top:2px}
+@media (max-width:960px){.devis-grid{grid-template-columns:1fr}}
+@media (max-width:560px){.champs{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--charbon-2);color:var(--sur-sombre-2);font-size:14.5px}
+footer .wrap{padding-block:44px 110px;display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:32px}
+footer h4{font:700 15px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 14px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--braise-vif)}
+footer .fbrand{display:flex;gap:14px;align-items:center}
+footer .fbrand img{width:64px;height:64px;border-radius:8px;background:#fff}
+footer .fbrand b{font:700 20px/1.1 var(--display);text-transform:uppercase;color:#fff}
+footer .credit{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:13px}
+footer .credit b{color:var(--braise-vif)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* sticky mobile cta */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--charbon-2) 94%,transparent);backdrop-filter:blur(8px);display:none;transform:translateY(110%);transition:transform .35s}
+.mcta.show{transform:none}
+.mcta .btn{width:100%}
+@media (max-width:760px){.mcta{display:block}}
+</style>
+</head>
+<body>
+<div class="demo"><b>Ébauche</b> · Proposition de site réalisée par Localia pour Créances Ramonage Services</div>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#accueil" aria-label="Créances Ramonage Services, accueil">
+      <img src="images/logo-creances-ramonage.png" alt="Logo Créances Ramonage Services" width="54" height="54">
+      <span>Créances <em>Ramonage</em> Services</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#prestations">Prestations</a>
+      <a href="#pourquoi">Pourquoi ramoner</a>
+      <a href="#zone">Zone</a>
+      <a href="#faq">Questions</a>
+      <a class="btn btn-feu" href="#devis">Devis gratuit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="accueil">
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-bg" style="background-image:url('images/hero-feu.jpg')" role="img" aria-label="Feu de bois dans un foyer"></div>
+    <canvas id="embers" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="eyebrow">Ramoneur à Créances · Manche</span>
+      <h1 id="h1">Un conduit propre, <em>un feu qui chauffe</em></h1>
+      <p class="lead">Ramonage de cheminées, inserts et poêles, entretien des poêles à granulés, installation de poêles et entretien de l'habitat. Mickael Guillotte intervient chez les particuliers de Créances et du centre Manche, avec sérieux et réactivité.</p>
+      <div class="ctas">
+        <a class="btn btn-feu" href="#devis">Demander un devis gratuit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#prestations">Voir les prestations</a>
+      </div>
+      <div class="badges">
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>Certificat de ramonage remis</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Artisan basé à Créances</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Entreprise créée le 1er septembre 2026</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Accompagné par la Chambre de métiers</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="saison" aria-labelledby="saison-t">
+    <div class="wrap">
+      <div>
+        <h2 id="saison-t">La saison de chauffe, <span id="saison-etat">c'est maintenant</span></h2>
+        <p id="saison-txt">Le bon moment pour ramoner : avant les premiers froids, puis une seconde fois en cours de saison.</p>
+      </div>
+      <div>
+        <div class="mois" id="mois" aria-hidden="true"></div>
+        <div class="legende">
+          <span><i style="background:repeating-linear-gradient(135deg,rgba(240,125,34,.55) 0 4px,rgba(240,125,34,.2) 4px 8px)"></i>Idéal pour ramoner</span>
+          <span><i style="background:var(--braise)"></i>Saison de chauffe</span>
+          <span><i style="outline:2px solid #fff;outline-offset:1px;background:transparent"></i>Mois en cours</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="prestations" aria-labelledby="presta-t">
+    <div class="wrap">
+      <div class="titre">
+        <span class="eyebrow">Prestations</span>
+        <h2 id="presta-t">Du conduit au toit, un seul interlocuteur</h2>
+        <p>Spécialiste du chauffage bois et granulés, Mickael s'occupe aussi de l'entretien de votre maison. Vous appelez une seule personne, qui connaît votre installation.</p>
+      </div>
+      <div class="services">
+        <article class="svc">
+          <figure><img src="images/toit-cheminee.jpg" alt="Toiture en tuiles avec une cheminée"></figure>
+          <div class="txt">
+            <span class="tag">Ramonage</span>
+            <h3>Cheminées, inserts et poêles à bois</h3>
+            <p>Nettoyage mécanique du conduit pour éliminer suies et dépôts, contrôle du tirage et certificat remis à la fin de l'intervention.</p>
+            <ul><li>Cheminée ouverte et insert</li><li>Poêle à bois et cuisinière</li><li>Certificat pour votre assurance</li></ul>
+            <a class="lien" href="#devis" data-presta="Ramonage">Demander un devis <span>→</span></a>
+          </div>
+        </article>
+        <article class="svc">
+          <figure><img src="images/poele-bois.jpg" alt="Poêle à bois noir dans une pièce lumineuse"></figure>
+          <div class="txt">
+            <span class="tag">Granulés</span>
+            <h3>Entretien de poêles à granulés</h3>
+            <p>Nettoyage du foyer, de l'échangeur et du conduit pour que votre poêle garde son rendement et consomme moins de granulés.</p>
+            <ul><li>Nettoyage complet de l'appareil</li><li>Ramonage du conduit</li><li>Conseils d'utilisation</li></ul>
+            <a class="lien" href="#devis" data-presta="Entretien poêle à granulés">Demander un devis <span>→</span></a>
+          </div>
+        </article>
+        <article class="svc">
+          <figure><img src="images/poele-salon.jpg" alt="Poêle installé dans un salon aux murs sombres"></figure>
+          <div class="txt">
+            <span class="tag">Installation</span>
+            <h3>Pose de poêles bois et granulés</h3>
+            <p>Un projet de poêle ? Mickael vous conseille sur l'appareil adapté à votre pièce et s'occupe de l'installation.</p>
+            <ul><li>Conseil sur le choix de l'appareil</li><li>Pose et raccordement</li><li>Mise en service</li></ul>
+            <a class="lien" href="#devis" data-presta="Installation de poêle">Demander un devis <span>→</span></a>
+          </div>
+        </article>
+        <article class="svc">
+          <figure><img src="images/tuiles-mousse.jpg" alt="Tuiles anciennes couvertes de mousse et de lichen"></figure>
+          <div class="txt">
+            <span class="tag">Entretien de l'habitat</span>
+            <h3>Démoussage et petits travaux</h3>
+            <p>Démoussage de toiture et petits travaux d'entretien et de bricolage, pour garder votre maison en bon état toute l'année.</p>
+            <ul><li>Démoussage de toiture</li><li>Petits travaux d'entretien</li><li>Bricolage</li></ul>
+            <a class="lien" href="#devis" data-presta="Démoussage / petits travaux">Demander un devis <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc pourquoi" id="pourquoi" aria-labelledby="pq-t">
+    <div class="wrap pq-grid">
+      <div class="pq-photo">
+        <img src="images/bois-fendu.jpg" alt="Bûches de bois fendues et empilées">
+        <div class="stamp">
+          <q>Une cheminée encrassée a beaucoup moins de rendement.</q>
+          <small>Mickael Guillotte, dans Tendance Ouest, octobre 2026</small>
+        </div>
+      </div>
+      <div>
+        <div class="titre" style="margin-bottom:30px">
+          <span class="eyebrow">Pourquoi ramoner</span>
+          <h2 id="pq-t">Trois bonnes raisons de ne pas attendre</h2>
+        </div>
+        <div class="raisons">
+          <div class="raison">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M12 8v5M12 16h.01"/></svg></div>
+            <div><h3>Votre sécurité</h3><p>Un conduit encrassé augmente le risque de feu de cheminée et d'intoxication au monoxyde de carbone.</p></div>
+          </div>
+          <div class="raison">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"/></svg></div>
+            <div><h3>Votre rendement</h3><p>Un conduit propre tire mieux : votre appareil chauffe davantage avec la même quantité de bois ou de granulés.</p></div>
+          </div>
+          <div class="raison">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg></div>
+            <div><h3>Votre assurance</h3><p>Le certificat de ramonage prouve l'entretien de votre installation. Votre assureur peut vous le demander en cas de sinistre.</p></div>
+          </div>
+          <p class="regle"><b>Combien de fois par an ?</b> Au minimum une fois par an, et deux fois si l'on applique strictement la réglementation, dont une pendant la période de chauffe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" aria-labelledby="et-t">
+    <div class="wrap">
+      <div class="titre">
+        <span class="eyebrow">Le déroulé</span>
+        <h2 id="et-t">Une intervention propre, du début à la fin</h2>
+      </div>
+      <div class="etapes">
+        <div class="etape"><h3>Votre demande</h3><p>Vous remplissez le formulaire ou vous appelez. Mickael vous recontacte pour fixer un rendez-vous.</p></div>
+        <div class="etape"><h3>Protection</h3><p>Le sol et l'espace autour de l'appareil sont protégés avant toute intervention.</p></div>
+        <div class="etape"><h3>Ramonage</h3><p>Nettoyage du conduit et de l'appareil, puis vérification du tirage et de l'état général.</p></div>
+        <div class="etape"><h3>Certificat</h3><p>Vous recevez votre certificat de ramonage et des conseils pour bien utiliser votre installation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc bande" id="zone" aria-labelledby="zone-t">
+    <div class="wrap">
+      <div class="titre">
+        <span class="eyebrow">Zone d'intervention</span>
+        <h2 id="zone-t">Créances et le centre Manche</h2>
+        <p>Basé à Créances, Mickael intervient chez les particuliers des communes voisines, sur la côte et dans les terres.</p>
+      </div>
+      <div class="zone-grid">
+        <div>
+          <div class="carte">
+            <svg viewBox="0 0 600 420" role="img" aria-label="Schéma de la zone d'intervention autour de Créances">
+              <defs>
+                <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F07D22" stop-opacity=".38"/><stop offset="1" stop-color="#F07D22" stop-opacity="0"/></radialGradient>
+                <pattern id="vagues" width="22" height="10" patternUnits="userSpaceOnUse"><path d="M0 5q5.5-5 11 0t11 0" fill="none" stroke="#3B4150" stroke-width="1.4"/></pattern>
+              </defs>
+              <rect width="600" height="420" fill="#1A1C21"/>
+              <path d="M0 0H178C170 60 162 110 166 170 170 240 160 300 168 360 172 390 168 410 170 420H0z" fill="url(#vagues)"/>
+              <path d="M178 0C170 60 162 110 166 170 170 240 160 300 168 360 172 390 168 410 170 420" fill="none" stroke="#5E6470" stroke-width="2"/>
+              <text x="40" y="215" fill="#5E6470" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="18" letter-spacing="4" transform="rotate(-90 40 215)">LA MANCHE</text>
+              <circle cx="232" cy="208" r="170" fill="url(#halo)"/>
+              <circle cx="232" cy="208" r="150" fill="none" stroke="#F07D22" stroke-width="1.5" stroke-dasharray="5 7" opacity=".7"><animate attributeName="r" values="140;156;140" dur="5s" repeatCount="indefinite"/></circle>
+              <g font-family="Barlow, Arial, sans-serif" font-size="15" fill="#D9DCE1">
+                <circle cx="236" cy="96" r="5" fill="#B9BCC4"/><text x="248" y="101">Lessay</text>
+                <circle cx="214" cy="62" r="4" fill="#B9BCC4"/><text x="224" y="57">St-Germain-sur-Ay</text>
+                <circle cx="210" cy="150" r="5" fill="#B9BCC4"/><text x="222" y="146">Pirou</text>
+                <circle cx="372" cy="118" r="5" fill="#B9BCC4"/><text x="384" y="123">Périers</text>
+                <circle cx="352" cy="44" r="4" fill="#B9BCC4"/><text x="364" y="49">La Haye</text>
+                <circle cx="208" cy="282" r="5" fill="#B9BCC4"/><text x="220" y="287">Gouville-sur-Mer</text>
+                <circle cx="220" cy="330" r="4" fill="#B9BCC4"/><text x="232" y="335">Blainville-sur-Mer</text>
+                <circle cx="352" cy="364" r="6" fill="#B9BCC4"/><text x="364" y="369">Coutances</text>
+                <circle cx="250" cy="390" r="4" fill="#B9BCC4"/><text x="262" y="402">Agon-Coutainville</text>
+                <circle cx="330" cy="250" r="4" fill="#B9BCC4"/><text x="342" y="255">Saint-Sauveur-Villages</text>
+              </g>
+              <circle cx="232" cy="208" r="13" fill="#E36A12"/><circle cx="232" cy="208" r="5" fill="#fff"/>
+              <text x="252" y="204" fill="#fff" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="24">CRÉANCES</text>
+              <text x="252" y="224" fill="#F07D22" font-family="Barlow, Arial, sans-serif" font-size="13">Siège de l'entreprise</text>
+            </svg>
+          </div>
+          <div class="communes">
+            <span class="home">Créances</span><span>Pirou</span><span>Lessay</span><span>Saint-Germain-sur-Ay</span><span>La Haye</span><span>Périers</span><span>Gouville-sur-Mer</span><span>Blainville-sur-Mer</span><span>Coutances</span><span>Agon-Coutainville</span><span>Saint-Sauveur-Villages</span>
+          </div>
+        </div>
+        <div>
+          <article class="presse">
+            <span class="src">Vu dans Tendance Ouest</span>
+            <h3>« Il vient de créer son entreprise de ramonage avec l'aide de la Chambre des métiers »</h3>
+            <blockquote>Le bois reste une valeur sûre pour se chauffer dans la région. « Il faut du rendement. »</blockquote>
+            <a class="btn btn-feu" href="https://www.tendanceouest.com/actualite-443133-creances-il-vient-de-creer-son-entreprise-de-ramonage-avec-l-aide-de-la-chambre-des-metiers" target="_blank" rel="noopener">Lire l'article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          </article>
+          <div class="cma">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M9 21v-5h6v5M9 12h.01M15 12h.01"/></svg>
+            <p><b>Une création accompagnée.</b> Mickael a monté son entreprise avec l'appui de la Chambre de métiers et de l'artisanat, dont il suit encore les conseils aujourd'hui.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="faq" aria-labelledby="faq-t">
+    <div class="wrap faq-grid">
+      <div class="titre">
+        <span class="eyebrow">Questions fréquentes</span>
+        <h2 id="faq-t">Ce que l'on demande souvent</h2>
+        <p>Une autre question ? Posez-la dans le formulaire de devis, Mickael vous répond.</p>
+      </div>
+      <div class="faq">
+        <details open><summary>À quelle fréquence faut-il ramoner ?</summary><p>Au minimum une fois par an. Si l'on applique strictement la réglementation, deux fois par an, dont une pendant la période où vous vous chauffez.</p></details>
+        <details><summary>Est-ce que je reçois un certificat ?</summary><p>Oui. Un certificat de ramonage vous est remis après chaque intervention. Conservez-le : votre assureur peut vous le demander.</p></details>
+        <details><summary>Vous intervenez aussi sur les poêles à granulés ?</summary><p>Oui. Le poêle à granulés demande un entretien régulier de l'appareil et un ramonage du conduit pour garder son rendement.</p></details>
+        <details><summary>Faut-il préparer quelque chose avant votre venue ?</summary><p>Laissez l'appareil éteint et froid, et dégagez l'accès autour de la cheminée ou du poêle. Le reste est pris en charge.</p></details>
+        <details><summary>Le devis est-il payant ?</summary><p>Non. Le devis est gratuit et sans engagement. Remplissez le formulaire ci-dessous, Mickael vous recontacte.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc devis" id="devis" aria-labelledby="devis-t">
+    <div class="wrap">
+      <div class="titre">
+        <span class="eyebrow">Devis gratuit</span>
+        <h2 id="devis-t">Demandez votre devis en 2 minutes</h2>
+        <p>Indiquez ce dont vous avez besoin. Mickael vous recontacte pour convenir d'un rendez-vous.</p>
+      </div>
+      <div class="devis-grid">
+        <div>
+          <form class="carte-devis" id="form-devis" novalidate>
+            <fieldset>
+              <span class="legend" id="presta-l">Prestation souhaitée <small>(plusieurs choix possibles)</small></span>
+              <div class="puces" role="group" aria-labelledby="presta-l">
+                <label class="puce"><input type="checkbox" name="presta" id="p-ramonage" value="Ramonage"><span>Ramonage</span></label>
+                <label class="puce"><input type="checkbox" name="presta" id="p-granules" value="Entretien poêle à granulés"><span>Entretien poêle à granulés</span></label>
+                <label class="puce"><input type="checkbox" name="presta" id="p-install" value="Installation de poêle"><span>Installation de poêle</span></label>
+                <label class="puce"><input type="checkbox" name="presta" id="p-demoussage" value="Démoussage / petits travaux"><span>Démoussage / petits travaux</span></label>
+              </div>
+              <p class="err" id="err-presta" hidden>Choisissez au moins une prestation.</p>
+            </fieldset>
+            <fieldset class="radios">
+              <span class="legend" id="app-l">Votre installation</span>
+              <div class="puces" role="radiogroup" aria-labelledby="app-l">
+                <label class="puce"><input type="radio" name="appareil" id="a-cheminee" value="Cheminée / insert"><span>Cheminée / insert</span></label>
+                <label class="puce"><input type="radio" name="appareil" id="a-bois" value="Poêle à bois"><span>Poêle à bois</span></label>
+                <label class="puce"><input type="radio" name="appareil" id="a-granules" value="Poêle à granulés"><span>Poêle à granulés</span></label>
+                <label class="puce"><input type="radio" name="appareil" id="a-autre" value="Autre / je ne sais pas"><span>Autre / je ne sais pas</span></label>
+              </div>
+            </fieldset>
+            <div class="champs">
+              <div class="champ"><label for="f-nom">Nom et prénom</label><input type="text" id="f-nom" name="nom" autocomplete="name" required><p class="err" id="err-nom" hidden>Indiquez votre nom.</p></div>
+              <div class="champ"><label for="f-tel">Téléphone</label><input type="tel" id="f-tel" name="tel" autocomplete="tel" inputmode="tel" required placeholder="06 12 34 56 78"><p class="err" id="err-tel" hidden>Indiquez un numéro à 10 chiffres.</p></div>
+              <div class="champ"><label for="f-mail">E-mail <small>(facultatif)</small></label><input type="email" id="f-mail" name="email" autocomplete="email"><p class="err" id="err-mail" hidden>Vérifiez l'adresse e-mail.</p></div>
+              <div class="champ"><label for="f-commune">Commune</label>
+                <select id="f-commune" name="commune" required>
+                  <option value="">Choisissez votre commune</option>
+                  <option>Créances</option><option>Pirou</option><option>Lessay</option><option>Saint-Germain-sur-Ay</option><option>La Haye</option><option>Périers</option><option>Gouville-sur-Mer</option><option>Blainville-sur-Mer</option><option>Coutances</option><option>Agon-Coutainville</option><option>Saint-Sauveur-Villages</option><option>Autre commune</option>
+                </select><p class="err" id="err-commune" hidden>Choisissez votre commune.</p></div>
+              <div class="champ full"><label for="f-msg">Votre message <small>(facultatif)</small></label><textarea id="f-msg" name="message" placeholder="Ex. : ramonage d'un insert, dernière intervention il y a deux ans, disponible le mercredi après-midi."></textarea></div>
+            </div>
+            <div class="form-pied">
+              <p>Vos informations servent uniquement à répondre à votre demande de devis.</p>
+              <button class="btn btn-feu" type="submit">Envoyer ma demande
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+            <div class="recap" id="recap" hidden aria-live="polite">
+              <h3>Aperçu de votre demande</h3>
+              <dl id="recap-dl"></dl>
+              <p class="note">Ébauche de démonstration : sur le site en ligne, cette demande arrivera directement chez Mickael, qui vous recontactera.</p>
+            </div>
+          </form>
+        </div>
+        <aside class="aside" aria-label="Coordonnées">
+          <div class="contact">
+            <img src="images/logo-creances-ramonage.png" alt="" width="96" height="96">
+            <h3>Mickael Guillotte</h3>
+            <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg><div><span class="a-completer">06 XX XX XX XX</span><small>Numéro à compléter</small></div></div>
+            <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div>Créances (50710)<small>Manche, Normandie</small></div></div>
+            <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3h-3a4 4 0 00-4 4v3H5v4h2v7h4v-7h3l1-4h-4V7a1 1 0 011-1h3z"/></svg><div><a href="https://www.facebook.com/profile.php?id=61592789798284" target="_blank" rel="noopener">Page Facebook</a><small>Créances Ramonage Services</small></div></div>
+          </div>
+          <div class="garanties">
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Devis gratuit et sans engagement</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Certificat de ramonage remis</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Intervention propre, lieux protégés</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Un artisan local, joignable directement</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fbrand"><img src="images/logo-creances-ramonage.png" alt="" width="64" height="64"><b>Créances Ramonage Services</b></div>
+      <p style="margin-top:14px;max-width:42ch">Ramonage, chauffage bois et granulés, entretien de l'habitat. Mickael Guillotte, artisan à Créances (Manche).</p>
+    </div>
+    <div>
+      <h4>Prestations</h4>
+      <ul><li><a href="#prestations">Ramonage</a></li><li><a href="#prestations">Poêles à granulés</a></li><li><a href="#prestations">Installation de poêles</a></li><li><a href="#prestations">Démoussage et petits travaux</a></li></ul>
+    </div>
+    <div>
+      <h4>Infos</h4>
+      <ul><li><a href="#zone">Zone d'intervention</a></li><li><a href="#faq">Questions fréquentes</a></li><li><a href="#devis">Demande de devis</a></li><li><a href="#accueil">Mentions légales</a></li></ul>
+    </div>
+    <div class="credit">
+      <span>© 2026 Créances Ramonage Services · Photos : Pexels (licence libre)</span>
+      <span>Site réalisé par <b>Localia</b> · localiapro.fr</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="btn btn-feu" href="#devis">Demander un devis gratuit</a></div>
+
+<script>
+(function(){
+  /* header shrink + mobile CTA */
+  var top=document.getElementById('top'), mcta=document.getElementById('mcta'), devis=document.getElementById('devis');
+  function onScroll(){
+    var y=window.scrollY||0;
+    top.classList.toggle('scrolled', y>40);
+    var r=devis.getBoundingClientRect();
+    mcta.classList.toggle('show', y>500 && !(r.top<window.innerHeight && r.bottom>0));
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* saison de chauffe */
+  var noms=['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Août','Sep','Oct','Nov','Déc'];
+  var chauffe=[0,1,2,3,9,10,11], ideal=[7,8,9];
+  var now=new Date().getMonth(), m=document.getElementById('mois');
+  noms.forEach(function(n,i){
+    var d=document.createElement('div');
+    d.className='m'+(chauffe.indexOf(i)>-1?' chauffe':'')+(ideal.indexOf(i)>-1&&i!==9?' ideal':'')+(i===now?' now':'');
+    if(i===9) d.className='m ideal'+(i===now?' now':'');
+    d.innerHTML='<i></i><b>'+n+'</b>'; m.appendChild(d);
+  });
+  var etat=document.getElementById('saison-etat'), txt=document.getElementById('saison-txt');
+  if(chauffe.indexOf(now)>-1 || now===9){etat.textContent="c'est maintenant";txt.textContent="Vous allez rallumer le feu : faites ramoner votre conduit avant les grands froids, puis une seconde fois en cours de saison.";}
+  else if(ideal.indexOf(now)>-1){etat.textContent='arrive bientôt';txt.textContent="Fin d'été, c'est le meilleur moment pour ramoner : les agendas sont encore libres et votre installation sera prête.";}
+  else{etat.textContent='est terminée';txt.textContent="Profitez de l'été pour faire ramoner, entretenir votre poêle ou démousser votre toiture.";}
+
+  /* lien carte -> case cochée */
+  document.querySelectorAll('[data-presta]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var v=a.getAttribute('data-presta');
+      document.querySelectorAll('input[name=presta]').forEach(function(c){ if(c.value===v) c.checked=true; });
+    });
+  });
+
+  /* formulaire */
+  var f=document.getElementById('form-devis');
+  function show(id,bad,el){ document.getElementById(id).hidden=!bad; if(el) el.classList.toggle('invalid',bad); return bad; }
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var nom=f.nom, tel=f.tel, mail=f.email, com=f.commune;
+    var prestas=[].slice.call(f.querySelectorAll('input[name=presta]:checked')).map(function(c){return c.value});
+    var bad=false, first=null;
+    function chk(id,cond,el){ var b=show(id,cond,el); if(b&&!first) first=el||f.querySelector('input[name=presta]'); bad=bad||b; }
+    chk('err-presta',prestas.length===0,null);
+    chk('err-nom',nom.value.trim().length<2,nom);
+    chk('err-tel',tel.value.replace(/\D/g,'').length!==10,tel);
+    chk('err-mail',mail.value.trim()!=='' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value.trim()),mail);
+    chk('err-commune',!com.value,com);
+    if(bad){ first.focus(); return; }
+    var app=f.querySelector('input[name=appareil]:checked');
+    var rows=[['Prestation',prestas.join(', ')],['Installation',app?app.value:'Non précisé'],['Nom',nom.value.trim()],['Téléphone',tel.value.trim()],['Commune',com.value]];
+    if(mail.value.trim()) rows.push(['E-mail',mail.value.trim()]);
+    if(f.message.value.trim()) rows.push(['Message',f.message.value.trim()]);
+    var dl=document.getElementById('recap-dl'); dl.innerHTML='';
+    rows.forEach(function(r){ var dt=document.createElement('dt'),dd=document.createElement('dd'); dt.textContent=r[0]; dd.textContent=r[1]; dl.appendChild(dt); dl.appendChild(dd); });
+    var rc=document.getElementById('recap'); rc.hidden=false; rc.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  ['f-nom','f-tel','f-mail','f-commune'].forEach(function(id){
+    document.getElementById(id).addEventListener('input',function(){ this.classList.remove('invalid'); var e=document.getElementById('err-'+({'f-nom':'nom','f-tel':'tel','f-mail':'mail','f-commune':'commune'})[id]); if(e) e.hidden=true; });
+  });
+  f.querySelectorAll('input[name=presta]').forEach(function(c){ c.addEventListener('change',function(){ document.getElementById('err-presta').hidden=true; }); });
+
+  /* braises */
+  var cv=document.getElementById('embers'); if(!cv||!cv.getContext) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ctx=cv.getContext('2d'), W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,2), P=[];
+  function size(){ var r=cv.getBoundingClientRect(); W=r.width; H=r.height; cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  function spawn(init){ return {x:Math.random()*W*.95+W*.05, y:init?Math.random()*H:H+10, r:Math.random()*1.8+.6, vy:-(Math.random()*.6+.25), vx:(Math.random()-.5)*.25, a:Math.random()*.6+.35, ph:Math.random()*6.28, life:0}; }
+  size(); var N=Math.round(Math.min(70,W/14)); for(var i=0;i<N;i++) P.push(spawn(true));
+  window.addEventListener('resize',function(){ size(); });
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){
+      var p=P[i]; p.life++; p.ph+=.03; p.x+=p.vx+Math.sin(p.ph)*.3; p.y+=p.vy;
+      var fade=Math.max(0,Math.min(1,p.y/H*1.4));
+      var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);
+      g.addColorStop(0,'rgba(255,190,110,'+(p.a*fade)+')'); g.addColorStop(.35,'rgba(240,125,34,'+(p.a*fade*.6)+')'); g.addColorStop(1,'rgba(240,125,34,0)');
+      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,p.r*4,0,6.283); ctx.fill();
+      if(p.y<-10||fade<=0.01) P[i]=spawn(false);
+    }
+    if(!reduce) requestAnimationFrame(frame);
+  }
+  frame();
+})();
+</script>
+</body>
+</html>
