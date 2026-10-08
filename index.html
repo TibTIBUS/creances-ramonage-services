@@ -150,6 +150,27 @@ section.bloc{padding-block:clamp(64px,9vw,112px)}
 @media (max-width:980px){.services{grid-template-columns:1fr}}
 @media (max-width:560px){.svc{grid-template-columns:1fr}.svc figure{aspect-ratio:16/9}}
 
+
+/* artisan */
+.artisan{background:var(--surface);border-block:1px solid var(--trait)}
+.art-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;align-items:center}
+.art-photo{position:relative;margin:0}
+.art-photo img{width:100%;aspect-ratio:530/463;object-fit:cover;border-radius:var(--r);box-shadow:var(--ombre)}
+.art-img{position:relative;isolation:isolate}
+.art-img::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--braise);border-radius:var(--r);z-index:-1}
+.art-photo{isolation:isolate}
+.art-photo figcaption{margin-top:26px;font-size:12.5px;color:var(--gris)}
+.art-txt{display:grid;gap:18px}
+.art-txt p{color:var(--gris);font-size:17px;max-width:60ch}
+.art-txt p strong{color:var(--encre)}
+.art-quote{font:800 clamp(30px,3.6vw,44px)/1 var(--display);text-transform:uppercase;color:var(--braise);quotes:"« " " »"}
+.art-faits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:6px}
+.art-faits div{padding:14px 16px;border-radius:var(--r);background:var(--suie);font-size:14.5px;min-width:0}
+.art-faits b{display:block;font:700 20px/1.1 var(--display);text-transform:uppercase;color:var(--encre);margin-bottom:4px}
+@media (max-width:900px){.art-grid{grid-template-columns:1fr;gap:44px}.art-photo{max-width:560px}}
+@media (max-width:560px){.art-faits{grid-template-columns:1fr}.art-img::before{inset:12px -10px -12px 12px}}
+.contact .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--braise);background:#fff}
+
 /* pourquoi */
 .pourquoi{background:var(--suie)}
 .pq-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
@@ -287,6 +308,7 @@ footer .credit b{color:var(--braise-vif)}
     </a>
     <nav class="nav" aria-label="Navigation principale">
       <a href="#prestations">Prestations</a>
+      <a href="#artisan">Votre artisan</a>
       <a href="#pourquoi">Pourquoi ramoner</a>
       <a href="#zone">Zone</a>
       <a href="#faq">Questions</a>
@@ -384,6 +406,27 @@ footer .credit b{color:var(--braise-vif)}
             <a class="lien" href="#devis" data-presta="Démoussage / petits travaux">Demander un devis <span>→</span></a>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc artisan" id="artisan" aria-labelledby="art-t">
+    <div class="wrap art-grid">
+      <figure class="art-photo">
+        <div class="art-img"><img src="images/mickael-guillotte.jpg" alt="Mickael Guillotte devant son utilitaire, un hérisson de ramonage à la main" width="530" height="463"></div>
+        <figcaption>Photo : Tendance Ouest</figcaption>
+      </figure>
+      <div class="art-txt">
+        <span class="eyebrow" style="color:var(--braise)">Votre artisan</span>
+        <h2 id="art-t" style="font-size:clamp(34px,4.6vw,56px);text-transform:uppercase;font-weight:800">Mickael Guillotte, ramoneur à Créances</h2>
+        <p>Mickael a créé <strong>Créances Ramonage Services le 1er septembre 2026</strong>. La date n'est pas un hasard : c'est le moment où l'on pense à faire ramoner avant l'hiver.</p>
+        <p>Spécialiste du chauffage bois et granulés, il ramone cheminées, inserts et poêles, et s'occupe aussi de l'entretien de votre maison. Pour lancer son entreprise, il s'est fait accompagner par la <strong>Chambre de métiers et de l'artisanat</strong>.</p>
+        <q class="art-quote">Il faut du rendement.</q>
+        <div class="art-faits">
+          <div><b>Créances</b>Basé dans la commune</div>
+          <div><b>Bois et granulés</b>Cheminées, inserts, poêles</div>
+          <div><b>Un seul contact</b>Il vient lui-même chez vous</div>
+        </div>
       </div>
     </div>
   </section>
@@ -566,7 +609,7 @@ footer .credit b{color:var(--braise-vif)}
         </div>
         <aside class="aside" aria-label="Coordonnées">
           <div class="contact">
-            <img src="images/logo-creances-ramonage.png" alt="" width="96" height="96">
+            <img class="avatar" src="images/mickael-guillotte-portrait.jpg" alt="Mickael Guillotte" width="96" height="96">
             <h3>Mickael Guillotte</h3>
             <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg><div><span class="a-completer">06 XX XX XX XX</span><small>Numéro à compléter</small></div></div>
             <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div>Créances (50710)<small>Manche, Normandie</small></div></div>
@@ -599,7 +642,7 @@ footer .credit b{color:var(--braise-vif)}
       <ul><li><a href="#zone">Zone d'intervention</a></li><li><a href="#faq">Questions fréquentes</a></li><li><a href="#devis">Demande de devis</a></li><li><a href="#accueil">Mentions légales</a></li></ul>
     </div>
     <div class="credit">
-      <span>© 2026 Créances Ramonage Services · Photos : Pexels (licence libre)</span>
+      <span>© 2026 Créances Ramonage Services · Photos : Pexels (licence libre), Tendance Ouest</span>
       <span>Site réalisé par <b>Localia</b> · localiapro.fr</span>
     </div>
   </div>
