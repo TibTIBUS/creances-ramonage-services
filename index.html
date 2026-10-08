@@ -6,7 +6,8 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" href="images/logo-creances-ramonage.png">
 <title>Créances Ramonage Services</title>
-<meta name="description" content="Ramonage, entretien et installation de poêles bois et granulés, démoussage et petits travaux à Créances et dans le centre Manche. Devis gratuit.">
+<meta name="description" content="Ramonage, chauffage bois et granulés, démoussage et petits travaux dans toute la Manche. Mikaël Guillotte, artisan à Créances. Devis gratuit, paiement CB, virement ou chèque.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Créances Ramonage Services","founder":{"@type":"Person","name":"Mikaël Guillotte"},"address":{"@type":"PostalAddress","addressLocality":"Créances","postalCode":"50710","addressRegion":"Manche","addressCountry":"FR"},"areaServed":{"@type":"AdministrativeArea","name":"Manche"},"openingHours":["Mo-Fr 08:00-12:00","Mo-Fr 13:30-18:00"],"paymentAccepted":"Carte bancaire, virement bancaire, chèque","sameAs":["https://www.facebook.com/profile.php?id=61592789798284"],"description":"Ramonage, chauffage bois et granulés, démoussage et petits travaux dans toute la Manche."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
@@ -208,7 +209,7 @@ section.bloc{padding-block:clamp(64px,9vw,112px)}
 .bande .titre .eyebrow{color:var(--braise-vif)}
 .zone-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:start}
 .carte{position:relative;background:var(--charbon-2);border-radius:var(--r);padding:12px;border:1px solid rgba(255,255,255,.08)}
-.carte svg{width:100%;height:auto;display:block}
+.carte svg{width:100%;height:auto;display:block;max-height:640px}
 .communes{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .communes span{padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.07);font-size:14px;color:var(--sur-sombre)}
 .communes span.home{background:var(--braise);color:#fff;font-weight:600}
@@ -221,6 +222,34 @@ section.bloc{padding-block:clamp(64px,9vw,112px)}
 .cma svg{width:34px;height:34px;color:var(--braise-vif);flex:none}
 .cma b{color:#fff}
 @media (max-width:900px){.zone-grid{grid-template-columns:1fr}}
+
+
+/* infos pratiques */
+.infos-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.info{background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.info .ihead{display:flex;align-items:center;gap:12px}
+.info .ihead svg{width:28px;height:28px;color:var(--braise);flex:none}
+.info h3{font-size:26px;text-transform:uppercase}
+.statut{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:7px 12px;border-radius:999px;font-weight:700;font-size:14px;background:var(--suie)}
+.statut i{width:9px;height:9px;border-radius:50%;background:var(--gris)}
+.statut.ouvert{background:color-mix(in srgb,#2E9E5B 14%,var(--surface));color:#1F7A44}
+.statut.ouvert i{background:#2E9E5B;box-shadow:0 0 0 4px color-mix(in srgb,#2E9E5B 25%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px color-mix(in srgb,#2E9E5B 0%,transparent)}}
+.horaires{width:100%;border-collapse:collapse;font-size:15.5px;font-variant-numeric:tabular-nums}
+.horaires td{padding:8px 0;border-bottom:1px solid var(--trait)}
+.horaires td:last-child{text-align:right;font-weight:600}
+.horaires tr.today td{color:var(--braise);font-weight:700}
+.paiements{display:grid;gap:10px}
+.pay{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:var(--r);background:var(--suie);font-weight:600;font-size:16px}
+.pay svg{width:30px;height:30px;color:var(--braise);flex:none}
+.info .note{font-size:14px;color:var(--gris)}
+.qr{display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:center}
+.qr-box{width:132px;height:132px;border:2px dashed var(--braise);border-radius:10px;display:grid;place-items:center;text-align:center;font:700 13px/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--braise);background:repeating-linear-gradient(45deg,transparent 0 10px,color-mix(in srgb,var(--braise) 6%,transparent) 10px 20px)}
+.qr-box svg{width:44px;height:44px;margin:0 auto 6px;display:block}
+.qr p{font-size:15px;color:var(--gris)}
+@media (max-width:1020px){.infos-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.info.google{grid-column:1/-1}}
+@media (max-width:640px){.infos-grid{grid-template-columns:1fr}}
+@media (max-width:380px){.qr{grid-template-columns:1fr}}
 
 /* faq */
 .faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start}
@@ -305,14 +334,15 @@ footer .credit b{color:var(--braise-vif)}
   <div class="wrap">
     <a class="brand" href="#accueil" aria-label="Créances Ramonage Services, accueil">
       <img src="images/logo-creances-ramonage.png" alt="Logo Créances Ramonage Services" width="54" height="54">
-      <span class="brand-txt" translate="no"><b>Mickael Guillotte</b><small>Artisan ramoneur</small></span>
+      <span class="brand-txt" translate="no"><b>Mikaël Guillotte</b><small>Artisan ramoneur</small></span>
     </a>
     <nav class="nav" aria-label="Navigation principale">
       <a href="#prestations">Prestations</a>
       <a href="#artisan">Votre artisan</a>
       <a href="#pourquoi">Pourquoi ramoner</a>
       <a href="#zone">Zone</a>
-      <a href="#faq">Questions</a>
+      <a href="#infos">Infos pratiques</a>
+      
       <a class="btn btn-feu" href="#devis">Devis gratuit</a>
     </nav>
   </div>
@@ -325,7 +355,7 @@ footer .credit b{color:var(--braise-vif)}
     <div class="wrap">
       <span class="eyebrow">Ramoneur à Créances · Manche</span>
       <h1 id="h1">Un conduit propre, <em>un feu qui chauffe</em></h1>
-      <p class="lead">Ramonage de cheminées, inserts et poêles, entretien des poêles à granulés, installation de poêles et entretien de l'habitat. Mickael Guillotte intervient chez les particuliers de Créances et du centre Manche, avec sérieux et réactivité.</p>
+      <p class="lead">Ramonage, chauffage bois et granulés, démoussage et petits travaux. Mikaël Guillotte, artisan basé à Créances, intervient chez les particuliers partout dans la Manche, avec sérieux et réactivité.</p>
       <div class="ctas">
         <a class="btn btn-feu" href="#devis">Demander un devis gratuit
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -334,8 +364,8 @@ footer .credit b{color:var(--braise-vif)}
       <div class="badges">
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>Certificat de ramonage remis</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Artisan basé à Créances</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Entreprise créée le 1er septembre 2026</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Intervient dans toute la Manche</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg>Carte bancaire, virement ou chèque</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Accompagné par la Chambre de métiers</li>
         </ul>
       </div>
@@ -364,47 +394,47 @@ footer .credit b{color:var(--braise-vif)}
       <div class="titre">
         <span class="eyebrow">Prestations</span>
         <h2 id="presta-t">Du conduit au toit, un seul interlocuteur</h2>
-        <p>Spécialiste du chauffage bois et granulés, Mickael s'occupe aussi de l'entretien de votre maison. Vous appelez une seule personne, qui connaît votre installation.</p>
+        <p>Ramonage, chauffage bois et granulés, démoussage et petits travaux : vous appelez une seule personne, qui connaît votre maison et votre installation.</p>
       </div>
       <div class="services">
         <article class="svc">
           <figure><img class="pos-toit" src="images/toit-cheminee.jpg" alt="Toiture en tuiles avec une cheminée"></figure>
           <div class="txt">
             <span class="tag">Ramonage</span>
-            <h3>Cheminées, inserts et poêles à bois</h3>
+            <h3>Cheminées, inserts et poêles</h3>
             <p>Nettoyage mécanique du conduit pour éliminer suies et dépôts, contrôle du tirage et certificat remis à la fin de l'intervention.</p>
-            <ul><li>Cheminée ouverte et insert</li><li>Poêle à bois et cuisinière</li><li>Certificat pour votre assurance</li></ul>
+            <ul><li>Cheminée ouverte et insert</li><li>Poêle à bois et à granulés</li><li>Certificat pour votre assurance</li></ul>
             <a class="lien" href="#devis" data-presta="Ramonage">Demander un devis <span>→</span></a>
           </div>
         </article>
         <article class="svc">
           <figure><img class="pos-poele" src="images/poele-bois.jpg" alt="Poêle à bois noir dans une pièce lumineuse"></figure>
           <div class="txt">
-            <span class="tag">Granulés</span>
-            <h3>Entretien de poêles à granulés</h3>
-            <p>Nettoyage du foyer, de l'échangeur et du conduit pour que votre poêle garde son rendement et consomme moins de granulés.</p>
-            <ul><li>Nettoyage complet de l'appareil</li><li>Ramonage du conduit</li><li>Conseils d'utilisation</li></ul>
-            <a class="lien" href="#devis" data-presta="Entretien poêle à granulés">Demander un devis <span>→</span></a>
-          </div>
-        </article>
-        <article class="svc">
-          <figure><img class="pos-poele2" src="images/poele-salon.jpg" alt="Poêle installé dans un salon aux murs sombres"></figure>
-          <div class="txt">
-            <span class="tag">Installation</span>
-            <h3>Pose de poêles bois et granulés</h3>
-            <p>Un projet de poêle ? Mickael vous conseille sur l'appareil adapté à votre pièce et s'occupe de l'installation.</p>
-            <ul><li>Conseil sur le choix de l'appareil</li><li>Pose et raccordement</li><li>Mise en service</li></ul>
-            <a class="lien" href="#devis" data-presta="Installation de poêle">Demander un devis <span>→</span></a>
+            <span class="tag">Chauffage bois et granulés</span>
+            <h3>Entretien et installation de poêles</h3>
+            <p>Spécialiste du chauffage au bois et aux granulés, Mikaël entretient votre appareil pour qu'il garde son rendement, et vous conseille pour un nouveau poêle.</p>
+            <ul><li>Entretien de poêles à granulés</li><li>Entretien de poêles à bois et d'inserts</li><li>Conseil et installation de poêles</li></ul>
+            <a class="lien" href="#devis" data-presta="Chauffage bois / granulés">Demander un devis <span>→</span></a>
           </div>
         </article>
         <article class="svc">
           <figure><img src="images/tuiles-mousse.jpg" alt="Tuiles anciennes couvertes de mousse et de lichen"></figure>
           <div class="txt">
-            <span class="tag">Entretien de l'habitat</span>
-            <h3>Démoussage et petits travaux</h3>
-            <p>Démoussage de toiture et petits travaux d'entretien et de bricolage, pour garder votre maison en bon état toute l'année.</p>
-            <ul><li>Démoussage de toiture</li><li>Petits travaux d'entretien</li><li>Bricolage</li></ul>
-            <a class="lien" href="#devis" data-presta="Démoussage / petits travaux">Demander un devis <span>→</span></a>
+            <span class="tag">Démoussage</span>
+            <h3>Démoussage de toiture</h3>
+            <p>Les mousses retiennent l'humidité et abîment les tuiles. Un démoussage régulier protège votre toiture et vos gouttières.</p>
+            <ul><li>Retrait des mousses et lichens</li><li>Toiture plus saine et plus durable</li><li>Devis gratuit</li></ul>
+            <a class="lien" href="#devis" data-presta="Démoussage">Demander un devis <span>→</span></a>
+          </div>
+        </article>
+        <article class="svc">
+          <figure><img src="images/petits-travaux.jpg" alt="Caisse à outils ouverte sur un établi"></figure>
+          <div class="txt">
+            <span class="tag">Petits travaux</span>
+            <h3>Entretien et bricolage</h3>
+            <p>Pour les petits travaux d'entretien de la maison, faites appel à un artisan que vous connaissez déjà.</p>
+            <ul><li>Petits travaux d'entretien</li><li>Bricolage</li><li>Un seul interlocuteur pour la maison</li></ul>
+            <a class="lien" href="#devis" data-presta="Petits travaux">Demander un devis <span>→</span></a>
           </div>
         </article>
       </div>
@@ -414,13 +444,13 @@ footer .credit b{color:var(--braise-vif)}
   <section class="bloc artisan" id="artisan" aria-labelledby="art-t">
     <div class="wrap art-grid">
       <figure class="art-photo">
-        <div class="art-img"><img src="images/mickael-guillotte.jpg" alt="Mickael Guillotte devant son utilitaire, un hérisson de ramonage à la main" width="530" height="463"></div>
+        <div class="art-img"><img src="images/mikael-guillotte.jpg" alt="Mikaël Guillotte devant son utilitaire, un hérisson de ramonage à la main" width="530" height="463"></div>
         <figcaption>Photo : Tendance Ouest</figcaption>
       </figure>
       <div class="art-txt">
         <span class="eyebrow" style="color:var(--braise)">Votre artisan</span>
-        <h2 id="art-t" style="font-size:clamp(34px,4.6vw,56px);text-transform:uppercase;font-weight:800">Mickael Guillotte, ramoneur à Créances</h2>
-        <p>Mickael a créé <strong>Créances Ramonage Services le 1er septembre 2026</strong>. La date n'est pas un hasard : c'est le moment où l'on pense à faire ramoner avant l'hiver.</p>
+        <h2 id="art-t" style="font-size:clamp(34px,4.6vw,56px);text-transform:uppercase;font-weight:800">Mikaël Guillotte, ramoneur à Créances</h2>
+        <p>Mikaël a créé <strong>Créances Ramonage Services le 1er septembre 2026</strong>. La date n'est pas un hasard : c'est le moment où l'on pense à faire ramoner avant l'hiver.</p>
         <p>Spécialiste du chauffage bois et granulés, il ramone cheminées, inserts et poêles, et s'occupe aussi de l'entretien de votre maison. Pour lancer son entreprise, il s'est fait accompagner par la <strong>Chambre de métiers et de l'artisanat</strong>.</p>
         <q class="art-quote">Il faut du rendement.</q>
         <div class="art-faits">
@@ -438,7 +468,7 @@ footer .credit b{color:var(--braise-vif)}
         <img src="images/bois-fendu.jpg" alt="Bûches de bois fendues et empilées">
         <div class="stamp">
           <q>Une cheminée encrassée a beaucoup moins de rendement.</q>
-          <small>Mickael Guillotte, dans Tendance Ouest, octobre 2026</small>
+          <small>Mikaël Guillotte, dans Tendance Ouest, octobre 2026</small>
         </div>
       </div>
       <div>
@@ -472,7 +502,7 @@ footer .credit b{color:var(--braise-vif)}
         <h2 id="et-t">Une intervention propre, du début à la fin</h2>
       </div>
       <div class="etapes">
-        <div class="etape"><h3>Votre demande</h3><p>Vous remplissez le formulaire ou vous appelez. Mickael vous recontacte pour fixer un rendez-vous.</p></div>
+        <div class="etape"><h3>Votre demande</h3><p>Vous remplissez le formulaire ou vous appelez. Mikaël vous recontacte pour fixer un rendez-vous.</p></div>
         <div class="etape"><h3>Protection</h3><p>Le sol et l'espace autour de l'appareil sont protégés avant toute intervention.</p></div>
         <div class="etape"><h3>Ramonage</h3><p>Nettoyage du conduit et de l'appareil, puis vérification du tirage et de l'état général.</p></div>
         <div class="etape"><h3>Certificat</h3><p>Vous recevez votre certificat de ramonage et des conseils pour bien utiliser votre installation.</p></div>
@@ -484,43 +514,24 @@ footer .credit b{color:var(--braise-vif)}
     <div class="wrap">
       <div class="titre">
         <span class="eyebrow">Zone d'intervention</span>
-        <h2 id="zone-t">Créances et le centre Manche</h2>
-        <p>Basé à Créances, Mickael intervient chez les particuliers des communes voisines, sur la côte et dans les terres.</p>
+        <h2 id="zone-t">Partout dans la Manche</h2>
+        <p>Basé à Créances, Mikaël intervient chez les particuliers dans tout le département, du Cotentin au sud Manche, sur la côte comme dans les terres.</p>
       </div>
       <div class="zone-grid">
         <div>
           <div class="carte">
-            <svg viewBox="0 0 600 420" role="img" aria-label="Schéma de la zone d'intervention autour de Créances">
-              <defs>
-                <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F07D22" stop-opacity=".38"/><stop offset="1" stop-color="#F07D22" stop-opacity="0"/></radialGradient>
-                <pattern id="vagues" width="22" height="10" patternUnits="userSpaceOnUse"><path d="M0 5q5.5-5 11 0t11 0" fill="none" stroke="#3B4150" stroke-width="1.4"/></pattern>
-              </defs>
-              <rect width="600" height="420" fill="#1A1C21"/>
-              <path d="M0 0H178C170 60 162 110 166 170 170 240 160 300 168 360 172 390 168 410 170 420H0z" fill="url(#vagues)"/>
-              <path d="M178 0C170 60 162 110 166 170 170 240 160 300 168 360 172 390 168 410 170 420" fill="none" stroke="#5E6470" stroke-width="2"/>
-              <text x="40" y="215" fill="#5E6470" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="18" letter-spacing="4" transform="rotate(-90 40 215)">LA MANCHE</text>
-              <circle cx="232" cy="208" r="170" fill="url(#halo)"/>
-              <circle cx="232" cy="208" r="150" fill="none" stroke="#F07D22" stroke-width="1.5" stroke-dasharray="5 7" opacity=".7"><animate attributeName="r" values="140;156;140" dur="5s" repeatCount="indefinite"/></circle>
-              <g font-family="Barlow, Arial, sans-serif" font-size="15" fill="#D9DCE1">
-                <circle cx="236" cy="96" r="5" fill="#B9BCC4"/><text x="248" y="101">Lessay</text>
-                <circle cx="214" cy="62" r="4" fill="#B9BCC4"/><text x="224" y="57">St-Germain-sur-Ay</text>
-                <circle cx="210" cy="150" r="5" fill="#B9BCC4"/><text x="222" y="146">Pirou</text>
-                <circle cx="372" cy="118" r="5" fill="#B9BCC4"/><text x="384" y="123">Périers</text>
-                <circle cx="352" cy="44" r="4" fill="#B9BCC4"/><text x="364" y="49">La Haye</text>
-                <circle cx="208" cy="282" r="5" fill="#B9BCC4"/><text x="220" y="287">Gouville-sur-Mer</text>
-                <circle cx="220" cy="330" r="4" fill="#B9BCC4"/><text x="232" y="335">Blainville-sur-Mer</text>
-                <circle cx="352" cy="364" r="6" fill="#B9BCC4"/><text x="364" y="369">Coutances</text>
-                <circle cx="250" cy="390" r="4" fill="#B9BCC4"/><text x="262" y="402">Agon-Coutainville</text>
-                <circle cx="330" cy="250" r="4" fill="#B9BCC4"/><text x="342" y="255">Saint-Sauveur-Villages</text>
-              </g>
-              <circle cx="232" cy="208" r="13" fill="#E36A12"/><circle cx="232" cy="208" r="5" fill="#fff"/>
-              <text x="252" y="204" fill="#fff" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="24">CRÉANCES</text>
-              <text x="252" y="224" fill="#F07D22" font-family="Barlow, Arial, sans-serif" font-size="13">Siège de l'entreprise</text>
+            <svg viewBox="0 0 382 599" role="img" aria-label="Schéma de la Manche : Mikaël Guillotte intervient dans tout le département, depuis Créances">
+              <defs><pattern id="vagues" width="22" height="10" patternUnits="userSpaceOnUse"><path d="M0 5q5.5-5 11 0t11 0" fill="none" stroke="#343944" stroke-width="1.3"/></pattern></defs>
+              <rect width="382" height="599" fill="url(#vagues)"/>
+              <polygon points="156.3,503.9 181.7,478.1 147.9,460.9 128.2,409.3 136.6,362.0 128.2,319.0 122.5,284.6 122.5,254.5 111.3,220.1 97.2,198.6 71.9,181.4 55.0,147.0 49.3,108.3 55.0,73.9 29.6,39.5 49.3,30.9 85.9,48.1 122.5,61.0 170.4,48.1 221.1,39.5 226.7,82.5 235.2,125.5 249.2,168.5 260.5,198.6 277.4,211.5 291.5,233.0 311.2,254.5 330.9,288.9 336.5,327.6 311.2,362.0 330.9,392.1 347.8,435.1 359.0,478.1 353.4,521.1 330.9,555.5 283.0,568.4 240.8,555.5 204.2,546.9 170.4,529.7" fill="#2B2F38" stroke="#F07D22" stroke-width="2" stroke-linejoin="round"/>
+              <text x="14" y="583" fill="#5E6470" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" letter-spacing="3">LA MANCHE · SCHÉMA INDICATIF</text>
+              <g font-family="Barlow, Arial, sans-serif" font-size="13.5" fill="#D9DCE1"><circle cx="122.5" cy="65.3" r="4" fill="#B9BCC4"/><text x="131.5" y="70.3">Cherbourg-en-Cotentin</text><circle cx="164.8" cy="121.2" r="4" fill="#B9BCC4"/><text x="173.8" y="126.2">Valognes</text><circle cx="85.9" cy="177.1" r="4" fill="#B9BCC4"/><text x="94.9" y="182.1">Barneville-Carteret</text><circle cx="226.7" cy="211.5" r="4" fill="#B9BCC4"/><text x="235.7" y="216.5">Carentan-les-Marais</text><circle cx="147.9" cy="245.9" r="4" fill="#B9BCC4"/><text x="156.9" y="250.9">Lessay</text><circle cx="181.7" cy="258.8" r="4" fill="#B9BCC4"/><text x="190.7" y="263.8">Périers</text><circle cx="271.8" cy="288.9" r="4" fill="#B9BCC4"/><text x="280.8" y="293.9">Saint-Lô</text><circle cx="173.2" cy="319.0" r="4" fill="#B9BCC4"/><text x="182.2" y="324.0">Coutances</text><circle cx="128.2" cy="409.3" r="4" fill="#B9BCC4"/><text x="137.2" y="414.3">Granville</text><circle cx="235.2" cy="409.3" r="4" fill="#B9BCC4"/><text x="244.2" y="414.3">Villedieu-les-Poêles</text><circle cx="195.7" cy="478.1" r="4" fill="#B9BCC4"/><text x="204.7" y="483.1">Avranches</text><circle cx="314.0" cy="491.0" r="4" fill="#B9BCC4"/><text x="323.0" y="496.0">Mortain</text><circle cx="271.8" cy="521.1" r="4" fill="#B9BCC4"/><text x="271.8" y="539.1" text-anchor="middle">Saint-Hilaire-du-H.</text></g>
+              <circle cx="136.6" cy="254.5" r="18" fill="#E36A12" opacity=".25"><animate attributeName="r" values="12;26;12" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".45;0;.45" dur="3s" repeatCount="indefinite"/></circle>
+              <circle cx="136.6" cy="254.5" r="9" fill="#E36A12"/><circle cx="136.6" cy="254.5" r="3.5" fill="#fff"/>
+              <text x="122.6" y="246.5" text-anchor="end" fill="#fff" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="21">CRÉANCES</text>
             </svg>
           </div>
-          <div class="communes">
-            <span class="home">Créances</span><span>Pirou</span><span>Lessay</span><span>Saint-Germain-sur-Ay</span><span>La Haye</span><span>Périers</span><span>Gouville-sur-Mer</span><span>Blainville-sur-Mer</span><span>Coutances</span><span>Agon-Coutainville</span><span>Saint-Sauveur-Villages</span>
-          </div>
+          <div class="communes"><span class="home">Créances</span><span>Cherbourg-en-Cotentin</span><span>Valognes</span><span>Barneville-Carteret</span><span>Carentan-les-Marais</span><span>Lessay</span><span>Périers</span><span>Saint-Lô</span><span>Coutances</span><span>Granville</span><span>Villedieu-les-Poêles</span><span>Avranches</span><span>Mortain</span><span>Saint-Hilaire-du-Harcouët</span><span>et toutes les communes de la Manche</span></div>
         </div>
         <div>
           <article class="presse">
@@ -532,7 +543,48 @@ footer .credit b{color:var(--braise-vif)}
           </article>
           <div class="cma">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M9 21v-5h6v5M9 12h.01M15 12h.01"/></svg>
-            <p><b>Une création accompagnée.</b> Mickael a monté son entreprise avec l'appui de la Chambre de métiers et de l'artisanat, dont il suit encore les conseils aujourd'hui.</p>
+            <p><b>Une création accompagnée.</b> Mikaël a monté son entreprise avec l'appui de la Chambre de métiers et de l'artisanat, dont il suit encore les conseils aujourd'hui.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="infos" aria-labelledby="infos-t" style="background:var(--suie)">
+    <div class="wrap">
+      <div class="titre">
+        <span class="eyebrow">Infos pratiques</span>
+        <h2 id="infos-t">Horaires, paiement et avis</h2>
+      </div>
+      <div class="infos-grid">
+        <div class="info">
+          <div class="ihead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>Horaires</h3></div>
+          <span class="statut" id="statut"><i></i><span id="statut-txt">Lundi au vendredi</span></span>
+          <table class="horaires" id="horaires">
+            <tr data-j="1"><td>Lundi</td><td>8h – 12h · 13h30 – 18h</td></tr>
+            <tr data-j="2"><td>Mardi</td><td>8h – 12h · 13h30 – 18h</td></tr>
+            <tr data-j="3"><td>Mercredi</td><td>8h – 12h · 13h30 – 18h</td></tr>
+            <tr data-j="4"><td>Jeudi</td><td>8h – 12h · 13h30 – 18h</td></tr>
+            <tr data-j="5"><td>Vendredi</td><td>8h – 12h · 13h30 – 18h</td></tr>
+            <tr data-j="6"><td>Samedi</td><td>Sur demande</td></tr>
+            <tr data-j="0"><td>Dimanche</td><td>Fermé</td></tr>
+          </table>
+          <p class="note">Le samedi, Mikaël peut intervenir sur demande particulière.</p>
+        </div>
+        <div class="info">
+          <div class="ihead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg><h3>Paiement</h3></div>
+          <p class="note" style="font-size:15.5px;color:var(--encre)">Réglez comme vous préférez, sans complication.</p>
+          <div class="paiements">
+            <div class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg>Carte bancaire</div>
+            <div class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg>Virement bancaire</div>
+            <div class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="1.5"/><path d="M6 14c2-2 3 1 5-1s3 1 4 0M15 10h3"/></svg>Chèque</div>
+          </div>
+        </div>
+        <div class="info google">
+          <div class="ihead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><h3>Avis Google</h3></div>
+          <div class="qr">
+            <div class="qr-box" id="qr-google"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></svg>Bientôt<br>disponible</div></div>
+            <p>La fiche Google de Créances Ramonage Services est en cours de création. Scannez bientôt ce QR code pour la retrouver sur Google Maps et laisser votre avis après une intervention.</p>
           </div>
         </div>
       </div>
@@ -544,14 +596,15 @@ footer .credit b{color:var(--braise-vif)}
       <div class="titre">
         <span class="eyebrow">Questions fréquentes</span>
         <h2 id="faq-t">Ce que l'on demande souvent</h2>
-        <p>Une autre question ? Posez-la dans le formulaire de devis, Mickael vous répond.</p>
+        <p>Une autre question ? Posez-la dans le formulaire de devis, Mikaël vous répond.</p>
       </div>
       <div class="faq">
         <details open><summary>À quelle fréquence faut-il ramoner ?</summary><p>Au minimum une fois par an. Si l'on applique strictement la réglementation, deux fois par an, dont une pendant la période où vous vous chauffez.</p></details>
         <details><summary>Est-ce que je reçois un certificat ?</summary><p>Oui. Un certificat de ramonage vous est remis après chaque intervention. Conservez-le : votre assureur peut vous le demander.</p></details>
         <details><summary>Vous intervenez aussi sur les poêles à granulés ?</summary><p>Oui. Le poêle à granulés demande un entretien régulier de l'appareil et un ramonage du conduit pour garder son rendement.</p></details>
         <details><summary>Faut-il préparer quelque chose avant votre venue ?</summary><p>Laissez l'appareil éteint et froid, et dégagez l'accès autour de la cheminée ou du poêle. Le reste est pris en charge.</p></details>
-        <details><summary>Le devis est-il payant ?</summary><p>Non. Le devis est gratuit et sans engagement. Remplissez le formulaire ci-dessous, Mickael vous recontacte.</p></details>
+        <details><summary>Quels moyens de paiement acceptez-vous ?</summary><p>Carte bancaire, virement bancaire et chèque. Vous choisissez ce qui vous arrange.</p></details>
+        <details><summary>Le devis est-il payant ?</summary><p>Non. Le devis est gratuit et sans engagement. Remplissez le formulaire ci-dessous, Mikaël vous recontacte.</p></details>
       </div>
     </div>
   </section>
@@ -561,7 +614,7 @@ footer .credit b{color:var(--braise-vif)}
       <div class="titre">
         <span class="eyebrow">Devis gratuit</span>
         <h2 id="devis-t">Demandez votre devis en 2 minutes</h2>
-        <p>Indiquez ce dont vous avez besoin. Mickael vous recontacte pour convenir d'un rendez-vous.</p>
+        <p>Indiquez ce dont vous avez besoin. Mikaël vous recontacte pour convenir d'un rendez-vous.</p>
       </div>
       <div class="devis-grid">
         <div>
@@ -570,9 +623,9 @@ footer .credit b{color:var(--braise-vif)}
               <span class="legend" id="presta-l">Prestation souhaitée <small>(plusieurs choix possibles)</small></span>
               <div class="puces" role="group" aria-labelledby="presta-l">
                 <label class="puce"><input type="checkbox" name="presta" id="p-ramonage" value="Ramonage"><span>Ramonage</span></label>
-                <label class="puce"><input type="checkbox" name="presta" id="p-granules" value="Entretien poêle à granulés"><span>Entretien poêle à granulés</span></label>
-                <label class="puce"><input type="checkbox" name="presta" id="p-install" value="Installation de poêle"><span>Installation de poêle</span></label>
-                <label class="puce"><input type="checkbox" name="presta" id="p-demoussage" value="Démoussage / petits travaux"><span>Démoussage / petits travaux</span></label>
+                <label class="puce"><input type="checkbox" name="presta" id="p-chauffage" value="Chauffage bois / granulés"><span>Chauffage bois / granulés</span></label>
+                <label class="puce"><input type="checkbox" name="presta" id="p-demoussage" value="Démoussage"><span>Démoussage</span></label>
+                <label class="puce"><input type="checkbox" name="presta" id="p-travaux" value="Petits travaux"><span>Petits travaux</span></label>
               </div>
               <p class="err" id="err-presta" hidden>Choisissez au moins une prestation.</p>
             </fieldset>
@@ -589,11 +642,9 @@ footer .credit b{color:var(--braise-vif)}
               <div class="champ"><label for="f-nom">Nom et prénom</label><input type="text" id="f-nom" name="nom" autocomplete="name" required><p class="err" id="err-nom" hidden>Indiquez votre nom.</p></div>
               <div class="champ"><label for="f-tel">Téléphone</label><input type="tel" id="f-tel" name="tel" autocomplete="tel" inputmode="tel" required placeholder="06 12 34 56 78"><p class="err" id="err-tel" hidden>Indiquez un numéro à 10 chiffres.</p></div>
               <div class="champ"><label for="f-mail">E-mail <small>(facultatif)</small></label><input type="email" id="f-mail" name="email" autocomplete="email"><p class="err" id="err-mail" hidden>Vérifiez l'adresse e-mail.</p></div>
-              <div class="champ"><label for="f-commune">Commune</label>
-                <select id="f-commune" name="commune" required>
-                  <option value="">Choisissez votre commune</option>
-                  <option>Créances</option><option>Pirou</option><option>Lessay</option><option>Saint-Germain-sur-Ay</option><option>La Haye</option><option>Périers</option><option>Gouville-sur-Mer</option><option>Blainville-sur-Mer</option><option>Coutances</option><option>Agon-Coutainville</option><option>Saint-Sauveur-Villages</option><option>Autre commune</option>
-                </select><p class="err" id="err-commune" hidden>Choisissez votre commune.</p></div>
+              <div class="champ"><label for="f-commune">Commune <small>(toute la Manche)</small></label>
+                <input type="text" id="f-commune" name="commune" list="communes-manche" autocomplete="address-level2" required placeholder="Ex. : Coutances">
+                <datalist id="communes-manche"><option value="Créances"><option value="Cherbourg-en-Cotentin"><option value="Valognes"><option value="Barneville-Carteret"><option value="Carentan-les-Marais"><option value="Lessay"><option value="Pirou"><option value="Périers"><option value="Saint-Lô"><option value="Coutances"><option value="Agon-Coutainville"><option value="Granville"><option value="Villedieu-les-Poêles"><option value="Avranches"><option value="Mortain"><option value="Saint-Hilaire-du-Harcouët"></datalist><p class="err" id="err-commune" hidden>Indiquez votre commune.</p></div>
               <div class="champ full"><label for="f-msg">Votre message <small>(facultatif)</small></label><textarea id="f-msg" name="message" placeholder="Ex. : ramonage d'un insert, dernière intervention il y a deux ans, disponible le mercredi après-midi."></textarea></div>
             </div>
             <div class="form-pied">
@@ -604,16 +655,17 @@ footer .credit b{color:var(--braise-vif)}
             <div class="recap" id="recap" hidden aria-live="polite">
               <h3>Aperçu de votre demande</h3>
               <dl id="recap-dl"></dl>
-              <p class="note">Ébauche de démonstration : sur le site en ligne, cette demande arrivera directement chez Mickael, qui vous recontactera.</p>
+              <p class="note">Ébauche de démonstration : sur le site en ligne, cette demande arrivera directement chez Mikaël, qui vous recontactera.</p>
             </div>
           </form>
         </div>
         <aside class="aside" aria-label="Coordonnées">
           <div class="contact">
-            <img class="avatar" src="images/mickael-guillotte-portrait.jpg" alt="Mickael Guillotte" width="96" height="96">
-            <h3>Mickael Guillotte</h3>
+            <img class="avatar" src="images/mikael-guillotte-portrait.jpg" alt="Mikaël Guillotte" width="96" height="96">
+            <h3>Mikaël Guillotte</h3>
             <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg><div><span class="a-completer">06 XX XX XX XX</span><small>Numéro à compléter</small></div></div>
-            <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div>Créances (50710)<small>Manche, Normandie</small></div></div>
+            <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div>Créances (50710)<small>Intervient dans toute la Manche</small></div></div>
+            <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div>Lun – ven : 8h – 12h · 13h30 – 18h<small>Samedi sur demande</small></div></div>
             <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3h-3a4 4 0 00-4 4v3H5v4h2v7h4v-7h3l1-4h-4V7a1 1 0 011-1h3z"/></svg><div><a href="https://www.facebook.com/profile.php?id=61592789798284" target="_blank" rel="noopener">Page Facebook</a><small>Créances Ramonage Services</small></div></div>
           </div>
           <div class="garanties">
@@ -621,6 +673,7 @@ footer .credit b{color:var(--braise-vif)}
             <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Certificat de ramonage remis</div>
             <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Intervention propre, lieux protégés</div>
             <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Un artisan local, joignable directement</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Paiement par carte, virement ou chèque</div>
           </div>
         </aside>
       </div>
@@ -632,15 +685,15 @@ footer .credit b{color:var(--braise-vif)}
   <div class="wrap">
     <div>
       <div class="fbrand"><img src="images/logo-creances-ramonage.png" alt="" width="64" height="64"><b>Créances Ramonage Services</b></div>
-      <p style="margin-top:14px;max-width:42ch">Ramonage, chauffage bois et granulés, entretien de l'habitat. Mickael Guillotte, artisan à Créances (Manche).</p>
+      <p style="margin-top:14px;max-width:42ch">Ramonage, chauffage bois et granulés, démoussage et petits travaux. Mikaël Guillotte, artisan à Créances, intervient dans toute la Manche.<br><br>Lundi – vendredi : 8h – 12h · 13h30 – 18h<br>Samedi sur demande</p>
     </div>
     <div>
       <h4>Prestations</h4>
-      <ul><li><a href="#prestations">Ramonage</a></li><li><a href="#prestations">Poêles à granulés</a></li><li><a href="#prestations">Installation de poêles</a></li><li><a href="#prestations">Démoussage et petits travaux</a></li></ul>
+      <ul><li><a href="#prestations">Ramonage</a></li><li><a href="#prestations">Chauffage bois et granulés</a></li><li><a href="#prestations">Démoussage</a></li><li><a href="#prestations">Petits travaux</a></li></ul>
     </div>
     <div>
       <h4>Infos</h4>
-      <ul><li><a href="#zone">Zone d'intervention</a></li><li><a href="#faq">Questions fréquentes</a></li><li><a href="#devis">Demande de devis</a></li><li><a href="#accueil">Mentions légales</a></li></ul>
+      <ul><li><a href="#zone">Zone d'intervention</a></li><li><a href="#infos">Horaires et paiement</a></li><li><a href="#faq">Questions fréquentes</a></li><li><a href="#devis">Demande de devis</a></li><li><a href="#accueil">Mentions légales</a></li></ul>
     </div>
     <div class="credit">
       <span>© 2026 Créances Ramonage Services · Photos : Pexels (licence libre), Tendance Ouest</span>
@@ -699,10 +752,10 @@ footer .credit b{color:var(--braise-vif)}
     chk('err-nom',nom.value.trim().length<2,nom);
     chk('err-tel',tel.value.replace(/\D/g,'').length!==10,tel);
     chk('err-mail',mail.value.trim()!=='' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value.trim()),mail);
-    chk('err-commune',!com.value,com);
+    chk('err-commune',com.value.trim().length<2,com);
     if(bad){ first.focus(); return; }
     var app=f.querySelector('input[name=appareil]:checked');
-    var rows=[['Prestation',prestas.join(', ')],['Installation',app?app.value:'Non précisé'],['Nom',nom.value.trim()],['Téléphone',tel.value.trim()],['Commune',com.value]];
+    var rows=[['Prestation',prestas.join(', ')],['Installation',app?app.value:'Non précisé'],['Nom',nom.value.trim()],['Téléphone',tel.value.trim()],['Commune',com.value.trim()]];
     if(mail.value.trim()) rows.push(['E-mail',mail.value.trim()]);
     if(f.message.value.trim()) rows.push(['Message',f.message.value.trim()]);
     var dl=document.getElementById('recap-dl'); dl.innerHTML='';
@@ -713,6 +766,25 @@ footer .credit b{color:var(--braise-vif)}
     document.getElementById(id).addEventListener('input',function(){ this.classList.remove('invalid'); var e=document.getElementById('err-'+({'f-nom':'nom','f-tel':'tel','f-mail':'mail','f-commune':'commune'})[id]); if(e) e.hidden=true; });
   });
   f.querySelectorAll('input[name=presta]').forEach(function(c){ c.addEventListener('change',function(){ document.getElementById('err-presta').hidden=true; }); });
+
+
+  /* horaires : ouvert / fermé (heure de Paris) */
+  (function(){
+    try{
+      var parts=new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+      var map={}; parts.forEach(function(p){map[p.type]=p.value});
+      var jours={'lun.':1,'mar.':2,'mer.':3,'jeu.':4,'ven.':5,'sam.':6,'dim.':0};
+      var j=jours[map.weekday], m=parseInt(map.hour,10)*60+parseInt(map.minute,10);
+      var row=document.querySelector('#horaires tr[data-j="'+j+'"]'); if(row) row.classList.add('today');
+      var st=document.getElementById('statut'), tx=document.getElementById('statut-txt');
+      var semaine=j>=1&&j<=5, ouvert=semaine&&((m>=480&&m<720)||(m>=810&&m<1080));
+      if(ouvert){st.classList.add('ouvert');tx.textContent='Ouvert en ce moment';}
+      else if(semaine&&m<480){tx.textContent="Fermé · ouvre à 8h";}
+      else if(semaine&&m>=720&&m<810){tx.textContent='Pause · reprise à 13h30';}
+      else if(j===5&&m>=1080||j===6||j===0){tx.textContent='Fermé · réouvre lundi à 8h';}
+      else{tx.textContent='Fermé · réouvre demain à 8h';}
+    }catch(e){}
+  })();
 
   /* braises */
   var cv=document.getElementById('embers'); if(!cv||!cv.getContext) return;
