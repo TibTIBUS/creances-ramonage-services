@@ -137,6 +137,7 @@ section.bloc{padding-block:clamp(64px,9vw,112px)}
 .svc figure{margin:0;overflow:hidden;position:relative}
 .svc figure img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .svc:hover figure img{transform:scale(1.07)}
+@media (max-width:980px){.svc figure img.pos-poele{object-position:30% 85%}.svc figure img.pos-poele2{object-position:50% 80%}.svc figure img.pos-toit{object-position:40% 60%}}
 .svc .txt{padding:26px 26px 24px;display:flex;flex-direction:column;gap:10px;min-width:0}
 .svc .tag{font:700 12px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--braise)}
 .svc h3{font-size:30px;text-transform:uppercase;font-weight:700}
@@ -148,14 +149,14 @@ section.bloc{padding-block:clamp(64px,9vw,112px)}
 .svc .lien span{transition:transform .2s}
 .svc .lien:hover span{transform:translateX(4px)}
 @media (max-width:980px){.services{grid-template-columns:1fr}}
-@media (max-width:560px){.svc{grid-template-columns:1fr}.svc figure{aspect-ratio:16/9}}
+@media (max-width:560px){.svc{grid-template-columns:1fr}.svc figure{aspect-ratio:4/3}}
 
 
 /* artisan */
 .artisan{background:var(--surface);border-block:1px solid var(--trait)}
 .art-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;align-items:center}
 .art-photo{position:relative;margin:0}
-.art-photo img{width:100%;aspect-ratio:530/463;object-fit:cover;border-radius:var(--r);box-shadow:var(--ombre)}
+.art-photo img{width:100%;height:auto;aspect-ratio:530/463;object-fit:cover;border-radius:var(--r);box-shadow:var(--ombre)}
 .art-img{position:relative;isolation:isolate}
 .art-img::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--braise);border-radius:var(--r);z-index:-1}
 .art-photo{isolation:isolate}
@@ -367,7 +368,7 @@ footer .credit b{color:var(--braise-vif)}
       </div>
       <div class="services">
         <article class="svc">
-          <figure><img src="images/toit-cheminee.jpg" alt="Toiture en tuiles avec une cheminée"></figure>
+          <figure><img class="pos-toit" src="images/toit-cheminee.jpg" alt="Toiture en tuiles avec une cheminée"></figure>
           <div class="txt">
             <span class="tag">Ramonage</span>
             <h3>Cheminées, inserts et poêles à bois</h3>
@@ -377,7 +378,7 @@ footer .credit b{color:var(--braise-vif)}
           </div>
         </article>
         <article class="svc">
-          <figure><img src="images/poele-bois.jpg" alt="Poêle à bois noir dans une pièce lumineuse"></figure>
+          <figure><img class="pos-poele" src="images/poele-bois.jpg" alt="Poêle à bois noir dans une pièce lumineuse"></figure>
           <div class="txt">
             <span class="tag">Granulés</span>
             <h3>Entretien de poêles à granulés</h3>
@@ -387,7 +388,7 @@ footer .credit b{color:var(--braise-vif)}
           </div>
         </article>
         <article class="svc">
-          <figure><img src="images/poele-salon.jpg" alt="Poêle installé dans un salon aux murs sombres"></figure>
+          <figure><img class="pos-poele2" src="images/poele-salon.jpg" alt="Poêle installé dans un salon aux murs sombres"></figure>
           <div class="txt">
             <span class="tag">Installation</span>
             <h3>Pose de poêles bois et granulés</h3>
