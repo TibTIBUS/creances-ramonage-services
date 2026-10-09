@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="icon" type="image/png" href="images/logo-creances-ramonage.png">
-<title>Créances Ramonage Services</title>
+<title>Ramoneur à Créances (Manche) | Créances Ramonage Services</title>
 <meta name="description" content="Ramonage, chauffage bois et granulés, démoussage et petits travaux dans un rayon de 50 km autour de Créances, et sur demande dans toute la Manche. Je suis Mikaël Guillotte, artisan à Créances. Devis gratuit, paiement CB, virement ou chèque.">
 <link rel="canonical" href="https://creances-ramonage-services.fr/">
 <meta property="og:type" content="website">
@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Créances Ramonage Services">
 <meta property="og:title" content="Créances Ramonage Services · Mikaël Guillotte, ramoneur">
 <meta property="og:url" content="https://creances-ramonage-services.fr/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Créances Ramonage Services","url":"https://creances-ramonage-services.fr/","telephone":"+33689376151","email":"creancesramonageservices@bbox.fr","founder":{"@type":"Person","name":"Mikaël Guillotte"},"address":{"@type":"PostalAddress","addressLocality":"Créances","postalCode":"50710","addressRegion":"Manche","addressCountry":"FR"},"areaServed":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":49.2,"longitude":-1.6167},"geoRadius":50000},"openingHours":["Mo-Fr 08:00-12:00","Mo-Fr 13:30-18:00"],"paymentAccepted":"Carte bancaire, virement bancaire, chèque","sameAs":["https://www.facebook.com/profile.php?id=61592789798284"],"description":"Ramonage, chauffage bois et granulés, démoussage et petits travaux dans un rayon de 50 km autour de Créances, et sur demande dans toute la Manche."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Créances Ramonage Services","url":"https://creances-ramonage-services.fr/","telephone":"+33689376151","email":"creancesramonageservices@bbox.fr","founder":{"@type":"Person","name":"Mikaël Guillotte"},"address":{"@type":"PostalAddress","streetAddress":"131 rue de la Paperie","addressLocality":"Créances","postalCode":"50710","addressRegion":"Manche","addressCountry":"FR"},"areaServed":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":49.2,"longitude":-1.6167},"geoRadius":50000},"geo":{"@type":"GeoCoordinates","latitude":49.2,"longitude":-1.6167},"image":"https://creances-ramonage-services.fr/images/logo-creances-ramonage.png","logo":"https://creances-ramonage-services.fr/images/logo-creances-ramonage.png","priceRange":"Devis gratuit","openingHours":["Mo-Fr 08:00-12:00","Mo-Fr 13:30-18:00"],"paymentAccepted":"Carte bancaire, virement bancaire, chèque","sameAs":["https://www.facebook.com/profile.php?id=61592789798284"],"description":"Ramonage, chauffage bois et granulés, démoussage et petits travaux dans un rayon de 50 km autour de Créances, et sur demande dans toute la Manche."}</script>
 <style>
 @font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/barlow-latin-400-normal.woff2) format('woff2')}
 @font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/barlow-latin-500-normal.woff2) format('woff2')}
@@ -369,8 +369,7 @@ footer .credit b{color:var(--braise-vif)}
     <div class="hero-bg" style="background-image:url('images/hero-feu.jpg')" role="img" aria-label="Feu de bois dans un foyer"></div>
     <canvas id="embers" aria-hidden="true"></canvas>
     <div class="wrap">
-      <span class="eyebrow">Ramoneur à Créances · Manche</span>
-      <h1 id="h1">Un conduit propre, <em>un feu qui chauffe</em></h1>
+      <h1 id="h1"><span class="eyebrow" style="display:flex;width:max-content;max-width:calc(100vw - 40px);margin-bottom:22px">Ramoneur à Créances · Manche</span>Un conduit propre, <em>un feu qui chauffe</em></h1>
       <p class="lead">Ramonage, chauffage bois et granulés, démoussage et petits travaux. Je suis Mikaël Guillotte, artisan basé à Créances, et j'interviens chez les particuliers dans un rayon de 50 km autour de Créances, et plus loin sur demande, avec sérieux et réactivité.</p>
       <div class="ctas">
         <a class="btn btn-feu" href="#devis">Demander un devis gratuit
@@ -637,7 +636,11 @@ footer .credit b{color:var(--braise-vif)}
       </div>
       <div class="devis-grid">
         <div>
-          <form class="carte-devis" id="form-devis" novalidate>
+          <form class="carte-devis" id="form-devis" name="devis" method="POST" action="/" data-netlify="true" netlify-honeypot="adresse-web" novalidate>
+            <input type="hidden" name="form-name" value="devis">
+            <input type="hidden" name="subject" value="Nouvelle demande de devis depuis le site">
+            <input type="hidden" name="prestations" value="">
+            <p hidden><label>Ne pas remplir : <input name="adresse-web" tabindex="-1" autocomplete="off"></label></p>
             <fieldset>
               <span class="legend" id="presta-l">Prestation souhaitée <small>(plusieurs choix possibles)</small></span>
               <div class="puces" role="group" aria-labelledby="presta-l">
@@ -672,10 +675,10 @@ footer .credit b{color:var(--braise-vif)}
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
             <div class="recap" id="recap" hidden aria-live="polite">
-              <h3>Aperçu de votre demande</h3>
+              <h3 id="recap-t">Demande envoyée, merci !</h3>
+              <p id="recap-txt">Je reçois votre demande à l'instant et je vous rappelle rapidement pour convenir d'un rendez-vous. Pour une urgence, appelez-moi au <a href="tel:+33689376151">06 89 37 61 51</a>.</p>
               <dl id="recap-dl"></dl>
-              <p class="note">Cliquez ci-dessous : votre application de messagerie s'ouvre avec la demande déjà rédigée, il ne reste qu'à l'envoyer. Vous pouvez aussi appeler le 06 89 37 61 51.</p>
-              <a class="btn btn-feu" id="recap-mail" href="mailto:creancesramonageservices@bbox.fr">Envoyer par e-mail</a>
+              <a class="btn btn-feu" id="recap-mail" href="mailto:creancesramonageservices@bbox.fr" hidden>Envoyer par e-mail</a>
             </div>
           </form>
         </div>
@@ -784,7 +787,19 @@ footer .credit b{color:var(--braise-vif)}
     var body='Bonjour,\n\nDemande de devis depuis le site :\n\n'+rows.map(function(r){return r[0]+' : '+r[1]}).join('\n');
     var href='mailto:creancesramonageservices@bbox.fr?subject='+encodeURIComponent('Demande de devis - '+prestas.join(', '))+'&body='+encodeURIComponent(body);
     var a=document.getElementById('recap-mail'); if(a) a.href=href;
-    var rc=document.getElementById('recap'); rc.hidden=false; rc.scrollIntoView({behavior:'smooth',block:'center'});
+    f.prestations.value=prestas.join(', ');
+    f.subject.value='Demande de devis : '+prestas.join(', ')+' – '+nom.value.trim()+' ('+com.value.trim()+')';
+    var fd=new FormData(f); fd.delete('presta');
+    var btn=f.querySelector('button[type=submit]'); btn.disabled=true; btn.style.opacity=.6;
+    var rc=document.getElementById('recap');
+    function fin(ok){
+      btn.disabled=false; btn.style.opacity='';
+      if(ok){ document.getElementById('recap-t').textContent='Demande envoyée, merci !'; a.hidden=true; f.querySelector('.form-pied button').hidden=true; }
+      else { document.getElementById('recap-t').textContent="L'envoi n'a pas abouti"; document.getElementById('recap-txt').innerHTML='Votre demande n\'a pas pu être transmise. Envoyez-la par e-mail avec le bouton ci-dessous (elle est déjà rédigée), ou appelez-moi au <a href="tel:+33689376151">06 89 37 61 51</a>.'; a.hidden=false; }
+      rc.hidden=false; rc.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString()})
+      .then(function(r){ fin(r.ok); }).catch(function(){ fin(false); });
   });
   ['f-nom','f-tel','f-mail','f-commune'].forEach(function(id){
     document.getElementById(id).addEventListener('input',function(){ this.classList.remove('invalid'); var e=document.getElementById('err-'+({'f-nom':'nom','f-tel':'tel','f-mail':'mail','f-commune':'commune'})[id]); if(e) e.hidden=true; });

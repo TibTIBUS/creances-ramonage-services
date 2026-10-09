@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://creances-ramonage-services.fr/sitemap.xml
