@@ -14,10 +14,15 @@
 <meta property="og:title" content="Créances Ramonage Services · Mikaël Guillotte, ramoneur">
 <meta property="og:url" content="https://creances-ramonage-services.fr/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Créances Ramonage Services","url":"https://creances-ramonage-services.fr/","telephone":"+33689376151","email":"creancesramonageservices@bbox.fr","founder":{"@type":"Person","name":"Mikaël Guillotte"},"address":{"@type":"PostalAddress","addressLocality":"Créances","postalCode":"50710","addressRegion":"Manche","addressCountry":"FR"},"areaServed":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":49.2,"longitude":-1.6167},"geoRadius":50000},"openingHours":["Mo-Fr 08:00-12:00","Mo-Fr 13:30-18:00"],"paymentAccepted":"Carte bancaire, virement bancaire, chèque","sameAs":["https://www.facebook.com/profile.php?id=61592789798284"],"description":"Ramonage, chauffage bois et granulés, démoussage et petits travaux dans un rayon de 50 km autour de Créances, et sur demande dans toute la Manche."}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
 <style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/barlow-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/barlow-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/barlow-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-condensed-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/barlow-condensed-latin-800-normal.woff2) format('woff2')}
+
 /* Layout: chantier-sheet — dark hearth hero with rising embers, light paper body, charcoal bands for proof, orange only for action */
 :root{
   --charbon:#2A2D35;      /* logo charcoal */
@@ -238,7 +243,7 @@ section.bloc{padding-block:clamp(64px,9vw,112px)}
 
 
 /* infos pratiques */
-.infos-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.infos-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 .info{background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .info .ihead{display:flex;align-items:center;gap:12px}
 .info .ihead svg{width:28px;height:28px;color:var(--braise);flex:none}
@@ -341,8 +346,6 @@ footer .credit b{color:var(--braise-vif)}
 </style>
 </head>
 <body>
-<div class="demo"><b>Ébauche</b> · Proposition de site réalisée par Localia pour Créances Ramonage Services</div>
-
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="#accueil" aria-label="Créances Ramonage Services, accueil">
@@ -457,8 +460,8 @@ footer .credit b{color:var(--braise-vif)}
   <section class="bloc artisan" id="artisan" aria-labelledby="art-t">
     <div class="wrap art-grid">
       <figure class="art-photo">
-        <div class="art-img"><img src="images/mikael-guillotte.jpg" alt="Mikaël Guillotte devant son utilitaire, un hérisson de ramonage à la main" width="530" height="463"></div>
-        <figcaption>Photo : Tendance Ouest</figcaption>
+        <div class="art-img"><img src="images/toit-cheminee.jpg" alt="Cheminée sur un toit" width="530" height="463" loading="lazy"></div>
+        
       </figure>
       <div class="art-txt">
         <span class="eyebrow" style="color:var(--braise)">Qui je suis</span>
@@ -577,7 +580,7 @@ footer .credit b{color:var(--braise-vif)}
     <div class="wrap">
       <div class="titre">
         <span class="eyebrow">Infos pratiques</span>
-        <h2 id="infos-t">Horaires, paiement et avis</h2>
+        <h2 id="infos-t">Horaires et paiement</h2>
       </div>
       <div class="infos-grid">
         <div class="info">
@@ -601,13 +604,6 @@ footer .credit b{color:var(--braise-vif)}
             <div class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg>Carte bancaire</div>
             <div class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg>Virement bancaire</div>
             <div class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="1.5"/><path d="M6 14c2-2 3 1 5-1s3 1 4 0M15 10h3"/></svg>Chèque</div>
-          </div>
-        </div>
-        <div class="info google">
-          <div class="ihead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><h3>Avis Google</h3></div>
-          <div class="qr">
-            <div class="qr-box" id="qr-google"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></svg>Bientôt<br>disponible</div></div>
-            <p>Ma fiche Google est en cours de création. Bientôt, scannez ce QR code pour me retrouver sur Google Maps et laisser votre avis après mon intervention.</p>
           </div>
         </div>
       </div>
@@ -671,7 +667,7 @@ footer .credit b{color:var(--braise-vif)}
               <div class="champ full"><label for="f-msg">Votre message <small>(facultatif)</small></label><textarea id="f-msg" name="message" placeholder="Ex. : ramonage d'un insert, dernière intervention il y a deux ans, disponible le mercredi après-midi."></textarea></div>
             </div>
             <div class="form-pied">
-              <p>Vos informations servent uniquement à répondre à votre demande de devis.</p>
+              <p>Vos informations servent uniquement à répondre à votre demande de devis. <a href="mentions-legales.html#donnees">En savoir plus</a></p>
               <button class="btn btn-feu" type="submit">Envoyer ma demande
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
@@ -685,7 +681,7 @@ footer .credit b{color:var(--braise-vif)}
         </div>
         <aside class="aside" aria-label="Coordonnées">
           <div class="contact">
-            <img class="avatar" src="images/mikael-guillotte-portrait.jpg" alt="Mikaël Guillotte" width="96" height="96">
+            <img class="avatar" src="images/logo-creances-ramonage.png" alt="Logo Créances Ramonage Services" width="96" height="96">
             <h3>Mikaël Guillotte</h3>
             <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg><div><a href="tel:+33689376151">06 89 37 61 51</a><small>Appel ou SMS</small></div></div>
             <div class="ligne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><a href="mailto:creancesramonageservices@bbox.fr">creancesramonageservices@bbox.fr</a><small>Réponse rapide</small></div></div>
@@ -718,11 +714,11 @@ footer .credit b{color:var(--braise-vif)}
     </div>
     <div>
       <h4>Infos</h4>
-      <ul><li><a href="#zone">Zone d'intervention</a></li><li><a href="#infos">Horaires et paiement</a></li><li><a href="#faq">Questions fréquentes</a></li><li><a href="#devis">Demande de devis</a></li><li><a href="#accueil">Mentions légales</a></li></ul>
+      <ul><li><a href="#zone">Zone d'intervention</a></li><li><a href="#infos">Horaires et paiement</a></li><li><a href="#faq">Questions fréquentes</a></li><li><a href="#devis">Demande de devis</a></li><li><a href="mentions-legales.html">Mentions légales et confidentialité</a></li></ul>
     </div>
     <div class="credit">
-      <span>© 2026 Créances Ramonage Services · Photos : Pexels (licence libre), Tendance Ouest</span>
-      <span>Site réalisé par <b>Localia</b> · localiapro.fr</span>
+      <span>© 2026 Créances Ramonage Services · SIRET 108 344 813 00010 · <a href="mentions-legales.html">Mentions légales</a> · Photos : Pexels (licence libre)</span>
+      <span>Site réalisé par <a href="https://localiapro.fr" target="_blank" rel="noopener"><b>Localia</b> · localiapro.fr</a> — création de sites et visibilité locale pour artisans</span>
     </div>
   </div>
 </footer>
