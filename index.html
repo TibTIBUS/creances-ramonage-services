@@ -771,12 +771,12 @@ footer .credit b{color:var(--braise-vif)}
 <script>
 (function(){
   /* header shrink + mobile CTA */
-  var top=document.getElementById('top'), mcta=document.getElementById('mcta'), devis=document.getElementById('devis');
+  var top=document.getElementById('top'), mcta=document.getElementById('mcta'), devis=document.getElementById('devis'), tous=document.querySelector('.tous');
+  function visible(el){ if(!el) return false; var r=el.getBoundingClientRect(); return r.top<window.innerHeight && r.bottom>0; }
   function onScroll(){
     var y=window.scrollY||0;
     top.classList.toggle('scrolled', y>40);
-    var r=devis.getBoundingClientRect();
-    mcta.classList.toggle('show', y>500 && !(r.top<window.innerHeight && r.bottom>0));
+    mcta.classList.toggle('show', y>500 && !visible(devis) && !visible(tous));
   }
   window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
 
