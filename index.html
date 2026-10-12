@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Créances Ramonage Services">
 <meta property="og:title" content="Créances Ramonage Services · Mikaël Guillotte, ramoneur">
 <meta property="og:url" content="https://creances-ramonage-services.fr/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Créances Ramonage Services","url":"https://creances-ramonage-services.fr/","telephone":"+33689376151","email":"creancesramonageservices@bbox.fr","founder":{"@type":"Person","name":"Mikaël Guillotte"},"address":{"@type":"PostalAddress","streetAddress":"131 rue de la Paperie","addressLocality":"Créances","postalCode":"50710","addressRegion":"Manche","addressCountry":"FR"},"areaServed":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":49.2,"longitude":-1.6167},"geoRadius":50000},"geo":{"@type":"GeoCoordinates","latitude":49.2,"longitude":-1.6167},"image":"https://creances-ramonage-services.fr/images/logo-creances-ramonage.png","logo":"https://creances-ramonage-services.fr/images/logo-creances-ramonage.png","priceRange":"Devis gratuit","openingHours":["Mo-Fr 08:00-12:00","Mo-Fr 13:30-18:00"],"paymentAccepted":"Carte bancaire, virement bancaire, chèque","sameAs":["https://www.facebook.com/profile.php?id=61592789798284"],"description":"Ramonage, chauffage bois et granulés, démoussage et petits travaux dans un rayon de 50 km autour de Créances, et sur demande dans toute la Manche."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","@id":"https://creances-ramonage-services.fr/#entreprise","name":"Créances Ramonage Services","url":"https://creances-ramonage-services.fr/","telephone":"+33689376151","email":"creancesramonageservices@bbox.fr","founder":{"@type":"Person","name":"Mikaël Guillotte"},"address":{"@type":"PostalAddress","streetAddress":"131 rue de la Paperie","addressLocality":"Créances","postalCode":"50710","addressRegion":"Manche","addressCountry":"FR"},"areaServed":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":49.2,"longitude":-1.6167},"geoRadius":50000},"geo":{"@type":"GeoCoordinates","latitude":49.2,"longitude":-1.6167},"image":"https://creances-ramonage-services.fr/images/logo-creances-ramonage.png","logo":"https://creances-ramonage-services.fr/images/logo-creances-ramonage.png","priceRange":"Devis gratuit","openingHours":["Mo-Fr 08:00-12:00","Mo-Fr 13:30-18:00"],"paymentAccepted":"Carte bancaire, virement bancaire, chèque","sameAs":["https://www.facebook.com/profile.php?id=61592789798284"],"description":"Ramonage, chauffage bois et granulés, démoussage et petits travaux dans un rayon de 50 km autour de Créances, et sur demande dans toute la Manche."}</script>
 <style>
 @font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/barlow-latin-400-normal.woff2) format('woff2')}
 @font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/barlow-latin-500-normal.woff2) format('woff2')}
@@ -163,6 +163,24 @@ section.bloc{padding-block:clamp(64px,9vw,112px)}
 @media (max-width:980px){.services{grid-template-columns:1fr}}
 @media (max-width:560px){.svc{grid-template-columns:1fr}.svc figure{aspect-ratio:4/3}}
 
+/* réalisations (accueil) */
+.reals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.real{background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .3s, box-shadow .3s}
+.real:hover{transform:translateY(-4px);box-shadow:var(--ombre)}
+.real .vg{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--trait);position:relative}
+.real .vg.une{grid-template-columns:1fr}
+.real .vg img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.real .vg span{position:absolute;top:10px;font:700 12px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;padding:6px 9px;border-radius:3px;background:rgba(18,19,23,.86);color:#fff}
+.real .vg span.av{left:10px}.real .vg span.ap{left:calc(50% + 11px);background:var(--braise)}
+.real .txt{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.real .tag{font:700 12px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--braise)}
+.real h3{font-size:26px;text-transform:uppercase}
+.real p{color:var(--gris);font-size:15.5px}
+.real .lien{margin-top:auto;padding-top:8px;font-weight:700;font-size:15px;color:var(--braise)}
+.tous{margin-top:28px;display:flex;justify-content:center}
+.btn-ligne{background:transparent;color:var(--encre);box-shadow:inset 0 0 0 1.5px var(--trait)}
+.btn-ligne:hover{box-shadow:inset 0 0 0 1.5px var(--braise);transform:translateY(-2px)}
+@media (max-width:820px){.reals{grid-template-columns:1fr}}
 
 /* artisan */
 .artisan{background:var(--surface);border-block:1px solid var(--trait)}
@@ -354,6 +372,7 @@ footer .credit b{color:var(--braise-vif)}
     </a>
     <nav class="nav" aria-label="Navigation principale">
       <a href="#prestations">Prestations</a>
+      <a href="/realisations/">Réalisations</a>
       <a href="#artisan">Qui je suis</a>
       <a href="#pourquoi">Pourquoi ramoner</a>
       <a href="#zone">Zone</a>
@@ -435,10 +454,10 @@ footer .credit b{color:var(--braise-vif)}
         <article class="svc">
           <figure><img src="images/tuiles-mousse.jpg" alt="Tuiles anciennes couvertes de mousse et de lichen"></figure>
           <div class="txt">
-            <span class="tag">Démoussage</span>
-            <h3>Démoussage de toiture</h3>
-            <p>Les mousses retiennent l'humidité et abîment les tuiles. Un démoussage régulier protège votre toiture et vos gouttières.</p>
-            <ul><li>Retrait des mousses et lichens</li><li>Toiture plus saine et plus durable</li><li>Devis gratuit</li></ul>
+            <span class="tag">Démoussage et nettoyage</span>
+            <h3>Toitures et façades</h3>
+            <p>Les mousses et les algues retiennent l'humidité et abîment tuiles et enduits. Un nettoyage régulier protège votre toiture, vos gouttières et vos murs.</p>
+            <ul><li>Retrait des mousses et lichens sur toiture</li><li>Nettoyage de façades et pignons (algues rouges et vertes)</li><li>Devis gratuit</li></ul>
             <a class="lien" href="#devis" data-presta="Démoussage">Demander un devis <span>→</span></a>
           </div>
         </article>
@@ -453,6 +472,27 @@ footer .credit b{color:var(--braise-vif)}
           </div>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="realisations" aria-labelledby="real-t" style="padding-top:0">
+    <div class="wrap">
+      <div class="titre">
+        <span class="eyebrow">Réalisations</span>
+        <h2 id="real-t">Mes derniers chantiers</h2>
+        <p>Des interventions réalisées chez mes clients dans la Manche, en photos.</p>
+      </div>
+      <div class="reals">
+        <a class="real" href="/realisations/grillage-anti-oiseaux-cheminee-creances.html">
+          <div class="vg une"><img src="images/realisations/grillage-anti-oiseaux-cheminee-2-vignette.jpg" alt="Grillage anti-oiseaux posé autour d'une tête de cheminée" width="800" height="600" loading="lazy"></div>
+          <div class="txt"><span class="tag">Protection de cheminée · Créances</span><h3>Grillage anti-oiseaux sur une cheminée à Créances</h3><p>Des oiseaux tombaient dans le conduit. Un grillage autour de la sortie leur ferme l'accès, sans gêner le tirage.</p><span class="lien">Voir le chantier →</span></div>
+        </a>
+        <a class="real" href="/realisations/nettoyage-pignon-algues-rouges-lessay.html">
+          <div class="vg"><img src="images/realisations/nettoyage-pignon-algues-rouges-avant-vignette.jpg" alt="Pignon couvert d'algues rouges avant nettoyage" width="800" height="600" loading="lazy"><img src="images/realisations/nettoyage-pignon-algues-rouges-apres-vignette.jpg" alt="Le même pignon propre après nettoyage" width="800" height="600" loading="lazy"><span class="av">Avant</span><span class="ap">Après</span></div>
+          <div class="txt"><span class="tag">Nettoyage de façade · Lessay</span><h3>Pignon couvert d'algues rouges à Lessay</h3><p>Des coulures rouge orangé sur tout le pignon. Après nettoyage, l'enduit retrouve sa teinte d'origine.</p><span class="lien">Voir le chantier →</span></div>
+        </a>
+      </div>
+      <div class="tous"><a class="btn btn-ligne" href="/realisations/">Toutes les réalisations</a></div>
     </div>
   </section>
 
@@ -717,7 +757,7 @@ footer .credit b{color:var(--braise-vif)}
     </div>
     <div>
       <h4>Infos</h4>
-      <ul><li><a href="#zone">Zone d'intervention</a></li><li><a href="#infos">Horaires et paiement</a></li><li><a href="#faq">Questions fréquentes</a></li><li><a href="#devis">Demande de devis</a></li><li><a href="mentions-legales.html">Mentions légales et confidentialité</a></li></ul>
+      <ul><li><a href="/realisations/">Réalisations</a></li><li><a href="#zone">Zone d'intervention</a></li><li><a href="#infos">Horaires et paiement</a></li><li><a href="#faq">Questions fréquentes</a></li><li><a href="#devis">Demande de devis</a></li><li><a href="mentions-legales.html">Mentions légales et confidentialité</a></li></ul>
     </div>
     <div class="credit">
       <span>© 2026 Créances Ramonage Services · SIRET 108 344 813 00010 · <a href="mentions-legales.html">Mentions légales</a> · Photos : Pexels (licence libre)</span>

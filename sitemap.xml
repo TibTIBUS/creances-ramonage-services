@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://creances-ramonage-services.fr/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/realisations/</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/realisations/grillage-anti-oiseaux-cheminee-creances.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <image:image><image:loc>https://creances-ramonage-services.fr/images/realisations/grillage-anti-oiseaux-cheminee-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://creances-ramonage-services.fr/images/realisations/grillage-anti-oiseaux-cheminee-2.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/realisations/nettoyage-pignon-algues-rouges-lessay.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <image:image><image:loc>https://creances-ramonage-services.fr/images/realisations/nettoyage-pignon-algues-rouges-avant.jpg</image:loc></image:image>
+    <image:image><image:loc>https://creances-ramonage-services.fr/images/realisations/nettoyage-pignon-algues-rouges-apres.jpg</image:loc></image:image>
   </url>
 </urlset>
