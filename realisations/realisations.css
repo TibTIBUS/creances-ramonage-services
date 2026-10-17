@@ -130,3 +130,12 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:10px 28px;justif
 footer a{text-decoration:none}
 footer a:hover{color:var(--braise-vif)}
 footer b{color:var(--braise-vif)}
+
+/* pages prestations et conseils */
+.photos.une{grid-template-columns:1fr}
+.photos.une img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.chantiers.lies{padding-bottom:8px}
+.chantier h3{font-size:24px;text-transform:uppercase;margin:0}
+.article .chantier h3{margin:0}
+.article .chantier p{margin:0}
+footer .wrap span a{white-space:nowrap}

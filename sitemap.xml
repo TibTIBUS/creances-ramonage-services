@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://creances-ramonage-services.fr/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-17</lastmod>
   </url>
   <url>
     <loc>https://creances-ramonage-services.fr/realisations/</loc>
@@ -19,5 +19,33 @@
     <lastmod>2026-10-12</lastmod>
     <image:image><image:loc>https://creances-ramonage-services.fr/images/realisations/nettoyage-pignon-algues-rouges-avant.jpg</image:loc></image:image>
     <image:image><image:loc>https://creances-ramonage-services.fr/images/realisations/nettoyage-pignon-algues-rouges-apres.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/ramonage/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/entretien-poele-bois-granules/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/demoussage-toiture/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/nettoyage-facade/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/conseils/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/conseils/ramonage-obligatoire/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://creances-ramonage-services.fr/conseils/quand-faire-ramoner/</loc>
+    <lastmod>2026-10-17</lastmod>
   </url>
 </urlset>
