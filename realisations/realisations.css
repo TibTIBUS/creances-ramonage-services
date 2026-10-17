@@ -139,3 +139,9 @@ footer b{color:var(--braise-vif)}
 .article .chantier h3{margin:0}
 .article .chantier p{margin:0}
 footer .wrap span a{white-space:nowrap}
+.tarifs{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;font-size:16.5px;margin-bottom:10px}
+.tarifs td{padding:14px 18px;border-bottom:1px solid var(--trait);vertical-align:middle}
+.tarifs tr:last-child td{border-bottom:0}
+.tarifs td:last-child{text-align:right;font:800 24px/1.1 var(--display);color:var(--braise);white-space:nowrap}
+.tarifs small{color:var(--gris);font-size:14px}
+.article .note-tarif{font-size:14.5px}
