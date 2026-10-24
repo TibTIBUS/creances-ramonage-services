@@ -911,5 +911,201 @@ footer .credit b{color:var(--braise-vif)}
   frame();
 })();
 </script>
+  <!-- ══ CHATBOT BRAISE (assistant IA) ══ -->
+  <style>
+    #brs-launcher { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 9998; display: flex; align-items: center; justify-content: center; gap: 9px; background: linear-gradient(135deg,#F07D22,#E36A12); color: #fff; border: none; border-radius: 999px; padding: 13px 18px; font: 600 16px "Barlow","Segoe UI",Roboto,sans-serif; box-shadow: 0 12px 28px -10px rgba(227,106,18,.7); cursor: pointer; transition: transform .2s; }
+    #brs-launcher:hover { transform: translateY(-1px); }
+    #brs-launcher svg { width: 20px; height: 20px; flex-shrink: 0; }
+    #brs-panel { position: fixed; left: 12px; right: 12px; bottom: 78px; z-index: 9999; display: none; flex-direction: column; background: #FAF7F3; border: 1px solid #E4DFD8; border-radius: 14px; overflow: hidden; box-shadow: 0 24px 60px -18px rgba(0,0,0,.7); max-height: 70vh; }
+    #brs-panel.open { display: flex; }
+    #brs-head { background: #2A2D35; padding: 12px 14px; display: flex; align-items: center; gap: 10px; }
+    #brs-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg,#F07D22,#B9520A); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    #brs-head h4 { font-family: "Barlow Condensed","Arial Narrow",Arial,sans-serif; font-size: 19px; letter-spacing: .04em; color: #F4F1EC; text-transform: uppercase; margin: 0; line-height: 1; font-weight: 600; }
+    #brs-head p { font-size: 12px; color: #B9BCC4; margin: 3px 0 0; font-family: "Barlow","Segoe UI",Roboto,sans-serif; }
+    #brs-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #5EC77E; margin-right: 5px; }
+    #brs-close { margin-left: auto; background: none; border: none; color: #B9BCC4; font-size: 18px; cursor: pointer; padding: 6px 8px; line-height: 1; }
+    #brs-close:hover { color: #fff; }
+    #brs-msgs { padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; -webkit-overflow-scrolling: touch; }
+    .brs-msg { display: flex; }
+    .brs-msg.user { justify-content: flex-end; }
+    .brs-bubble { max-width: 85%; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.45; font-family: "Barlow","Segoe UI",Roboto,sans-serif; }
+    .brs-msg.bot .brs-bubble { background: #EFEAE3; color: #23262D; border-bottom-left-radius: 4px; }
+    .brs-msg.user .brs-bubble { background: #E36A12; color: #fff; border-bottom-right-radius: 4px; }
+    .brs-bubble a { color: inherit; font-weight: 600; text-decoration: underline; }
+    .brs-typing { display: flex; gap: 4px; padding: 10px 14px; background: #EFEAE3; border-radius: 12px; border-bottom-left-radius: 4px; width: fit-content; }
+    .brs-typing span { width: 6px; height: 6px; border-radius: 50%; background: #B9520A; animation: brsBounce .8s infinite; }
+    .brs-typing span:nth-child(2) { animation-delay: .15s; }
+    .brs-typing span:nth-child(3) { animation-delay: .3s; }
+    @keyframes brsBounce { 0%,80%,100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
+    #brs-chips { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 14px 10px; }
+    .brs-chip { font: 500 12.5px "Barlow","Segoe UI",Roboto,sans-serif; color: #B9520A; border: 1px solid rgba(227,106,18,.45); background: rgba(240,125,34,.1); border-radius: 999px; padding: 6px 11px; cursor: pointer; }
+    .brs-chip:hover { background: rgba(240,125,34,.2); }
+    #brs-form { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid #E4DFD8; background: #FAF7F3; margin: 0; }
+    #brs-input { flex: 1; background: #fff; border: 1px solid #E4DFD8; border-radius: 8px; color: #23262D; font: 400 16px "Barlow","Segoe UI",Roboto,sans-serif; padding: 9px 11px; resize: none; outline: none; height: 40px; min-height: 0; }
+    #brs-input:focus { border-color: #F07D22; }
+    #brs-send { width: 40px; height: 40px; border: none; border-radius: 8px; background: #F07D22; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+    #brs-send:disabled { opacity: .5; }
+    #brs-foot { padding: 6px 16px 10px; text-align: center; }
+    #brs-foot a { font-size: 12px; color: #5E6470; font-weight: 500; font-family: "Barlow","Segoe UI",Roboto,sans-serif; }
+    @media (min-width: 601px) {
+      #brs-launcher { left: auto; right: 24px; bottom: 24px; width: auto; }
+      #brs-panel { left: auto; right: 24px; bottom: 96px; width: 390px; }
+    }
+    @media (max-width: 600px) {
+      #brs-panel.open { left: 0; right: 0; bottom: 0; top: 0; max-height: none; height: 100dvh; border-radius: 0; border: none; }
+      #brs-launcher.brs-hidden { display: none; }
+      #brs-msgs { flex: 1; }
+    }
+  </style>
+
+  <button id="brs-launcher" aria-label="Ouvrir le chat : une question, réponse immédiate">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16a1 1 0 011 1v10a1 1 0 01-1 1H9l-4.2 3.4c-.5.4-1.3 0-1.3-.7V6a1 1 0 011-1z" fill="#fff"/><circle cx="8.5" cy="11" r="1.3" fill="#E36A12"/><circle cx="12.5" cy="11" r="1.3" fill="#E36A12"/><circle cx="16.5" cy="11" r="1.3" fill="#E36A12"/></svg>
+    Une question ? Réponse immédiate
+  </button>
+
+  <div id="brs-panel" role="dialog" aria-label="Assistant Braise">
+    <div id="brs-head">
+      <div id="brs-avatar">🔥</div>
+      <div>
+        <h4>Braise</h4>
+        <p><span id="brs-dot"></span>L'assistant de Mikael répond tout de suite</p>
+      </div>
+      <button id="brs-close" aria-label="Fermer le chat">✕</button>
+    </div>
+    <div id="brs-msgs">
+      <div class="brs-msg bot"><div class="brs-bubble">Bonjour 👋 Je suis Braise, l'assistant de Créances Ramonage Services. Tarifs, horaires, zone d'intervention… je réponds à vos questions, et je peux vous orienter vers un <strong>devis gratuit</strong>.</div></div>
+    </div>
+    <div id="brs-chips">
+      <button class="brs-chip" data-q="Je voudrais un devis gratuit">📋 Demander un devis</button>
+      <button class="brs-chip" data-q="Quels sont vos tarifs ?">💶 Tarifs</button>
+      <button class="brs-chip" data-q="Quels sont vos horaires ?">🕐 Horaires</button>
+      <button class="brs-chip" data-q="Dans quelle zone intervenez-vous ?">📍 Zone d'intervention</button>
+    </div>
+    <form id="brs-form">
+      <textarea id="brs-input" placeholder="Écrivez votre message…" rows="1" aria-label="Votre message"></textarea>
+      <button id="brs-send" type="submit" aria-label="Envoyer"><svg viewBox="0 0 18 18" width="18" height="18" fill="none" aria-hidden="true"><path d="M16 9L2 2l3 7-3 7 14-7z" fill="#fff"/></svg></button>
+    </form>
+    <div id="brs-foot"><a href="https://localiapro.fr" target="_blank" rel="noopener">Assistant IA conçu par Localia</a></div>
+  </div>
+
+  <script>
+    // ── CHATBOT BRAISE ──
+    (function () {
+      const brsLauncher = document.getElementById('brs-launcher');
+      const brsPanel = document.getElementById('brs-panel');
+      const brsClose = document.getElementById('brs-close');
+      const brsMsgs = document.getElementById('brs-msgs');
+      const brsInput = document.getElementById('brs-input');
+      const brsSend = document.getElementById('brs-send');
+      const brsForm = document.getElementById('brs-form');
+      let brsHistory = [];
+
+      brsLauncher.addEventListener('click', () => {
+        const ouvert = brsPanel.classList.toggle('open');
+        brsLauncher.classList.toggle('brs-hidden', ouvert && window.innerWidth <= 600);
+        if (ouvert) brsFitViewport();
+        if (ouvert && window.innerWidth > 600) brsInput.focus();
+      });
+      brsClose.addEventListener('click', () => {
+        brsPanel.classList.remove('open');
+        brsLauncher.classList.remove('brs-hidden');
+        brsPanel.style.height = '';
+        brsPanel.style.top = '';
+      });
+
+      // Ajuste la fenêtre à la zone réellement visible (clavier iOS ouvert)
+      function brsFitViewport() {
+        if (window.innerWidth > 600 || !window.visualViewport) return;
+        if (brsPanel.classList.contains('open')) {
+          brsPanel.style.height = window.visualViewport.height + 'px';
+          brsPanel.style.top = window.visualViewport.offsetTop + 'px';
+        }
+      }
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', brsFitViewport);
+        window.visualViewport.addEventListener('scroll', brsFitViewport);
+      }
+
+      // Les liens internes (/#devis…) ferment le panneau pour laisser voir la section
+      brsPanel.addEventListener('click', (e) => {
+        const a = e.target.closest('a');
+        if (a && a.getAttribute('href') && a.getAttribute('href').startsWith('/')) {
+          brsClose.click();
+        }
+      });
+
+      document.querySelectorAll('.brs-chip').forEach(chip => {
+        chip.addEventListener('click', () => brsSendMessage(chip.dataset.q));
+      });
+
+      brsForm.addEventListener('submit', (e) => { e.preventDefault(); brsSendMessage(); });
+      brsInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); brsSendMessage(); }
+      });
+
+      function brsEscape(t) {
+        return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+      function brsRender(t) {
+        let h = brsEscape(t);
+        h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g, '<a href="$2">$1</a>');
+        h = h.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+        h = h.replace(/\n/g, '<br>');
+        return h;
+      }
+      function brsAddMessage(role, text) {
+        const div = document.createElement('div');
+        div.className = `brs-msg ${role}`;
+        div.innerHTML = `<div class="brs-bubble">${role === 'bot' ? brsRender(text) : brsEscape(text)}</div>`;
+        brsMsgs.appendChild(div);
+        brsMsgs.scrollTop = brsMsgs.scrollHeight;
+      }
+      function brsShowTyping() {
+        const t = document.createElement('div');
+        t.className = 'brs-msg bot'; t.id = 'brs-typing';
+        t.innerHTML = '<div class="brs-typing"><span></span><span></span><span></span></div>';
+        brsMsgs.appendChild(t);
+        brsMsgs.scrollTop = brsMsgs.scrollHeight;
+      }
+      function brsRemoveTyping() {
+        const t = document.getElementById('brs-typing');
+        if (t) t.remove();
+      }
+
+      async function brsSendMessage(preset) {
+        const text = (typeof preset === 'string' ? preset : brsInput.value).trim();
+        if (!text) return;
+        brsInput.value = '';
+        brsAddMessage('user', text);
+        brsHistory.push({ role: 'user', content: text });
+        brsSend.disabled = true;
+        brsShowTyping();
+        try {
+          const res = await fetch('/.netlify/functions/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: brsHistory })
+          });
+          const data = await res.json();
+          brsRemoveTyping();
+          if (data.reply) {
+            brsHistory.push({ role: 'assistant', content: data.reply });
+            brsAddMessage('bot', data.reply);
+          } else {
+            brsHistory.pop();
+            brsAddMessage('bot', "Désolé, je ne peux pas répondre pour le moment. Mikael vous répond directement au **06 89 37 61 51** (appel ou SMS) ou via le [formulaire de devis](/#devis), gratuit et sans engagement.");
+          }
+        } catch {
+          brsRemoveTyping();
+          brsHistory.pop();
+          brsAddMessage('bot', "Désolé, petit problème technique de mon côté. Mikael reste joignable au **06 89 37 61 51** ou à creancesramonageservices@bbox.fr 🙏");
+        }
+        brsSend.disabled = false;
+        if (window.innerWidth > 600) brsInput.focus();
+      }
+    })();
+  </script>
+
 </body>
 </html>
+
