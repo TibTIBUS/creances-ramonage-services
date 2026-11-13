@@ -41,7 +41,7 @@ dd{margin:0}
 </style>
 </head>
 <body>
-<header><div class="w"><a href="./"><img src="images/logo-creances-ramonage.png" alt="">Créances Ramonage Services</a><a class="back" href="./">← Retour au site</a></div></header>
+<header><div class="w"><a href='/'><img src="images/logo-creances-ramonage.png" alt="">Créances Ramonage Services</a><a class='back' href='/'>← Retour au site</a></div></header>
 <main>
 <h1>Mentions légales et confidentialité</h1>
 <p class="maj">Dernière mise à jour : octobre 2026</p>
@@ -223,7 +223,7 @@ dd{margin:0}
       }
       function brsRender(t) {
         let h = brsEscape(t);
-        h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g, '<a href="$2">$1</a>');
+        h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g, '<a href="https://creances-ramonage-services.fr/$2">$1</a>');
         h = h.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
         h = h.replace(/\n/g, '<br>');
         return h;
@@ -256,7 +256,7 @@ dd{margin:0}
         brsSend.disabled = true;
         brsShowTyping();
         try {
-          const res = await fetch('/.netlify/functions/chat', {
+          const res = await fetch('/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ messages: brsHistory })

@@ -1,8 +1,8 @@
-@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/barlow-latin-400-normal.woff2) format('woff2')}
-@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/barlow-latin-600-normal.woff2) format('woff2')}
-@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/barlow-latin-700-normal.woff2) format('woff2')}
-@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/barlow-condensed-latin-700-normal.woff2) format('woff2')}
-@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/barlow-condensed-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/barlow-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/barlow-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/barlow-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/barlow-condensed-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/barlow-condensed-latin-800-normal.woff2) format('woff2')}
 
 :root{
   --charbon:#2A2D35;--charbon-2:#1E2026;--braise:#E36A12;--braise-vif:#F07D22;--braise-sombre:#B9520A;
