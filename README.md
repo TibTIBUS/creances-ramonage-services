@@ -1,6 +1,6 @@
 # Créances Ramonage Services — site vitrine
 
-Site réalisé par [Localia](https://localiapro.fr) pour Créances Ramonage Services (Mikael Guillotte, Créances, Manche).
+Site réalisé par [Thibaut Marie](https://thibautmarie-web.fr) pour Créances Ramonage Services (Mikael Guillotte, Créances, Manche).
 
 - Adresse : https://creances-ramonage-services.fr (hébergé sur Netlify ; cette copie GitHub Pages sert de secours)
 - Accueil : `index.html` ; pages prestations (`ramonage/`, `entretien-poele-bois-granules/`, `demoussage-toiture/`, `nettoyage-facade/`), conseils (`conseils/`), réalisations (`realisations/`)
